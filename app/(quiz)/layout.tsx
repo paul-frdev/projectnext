@@ -1,22 +1,25 @@
-import './globals.css'
+import { Navbar } from '@/components/navbar'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'BG Capital',
-  description: 'Investing app',
+  title: 'Quiz',
+  description: 'start your investing journey',
 }
 
-export default function RootLayout({
+export default function QuizLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <body className='bg-body'>{children}</body>
+      <body className='bg-body'>
+        <Navbar />
+        {children}
+      </body>
     </html>
   )
 }
