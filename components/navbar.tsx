@@ -22,7 +22,7 @@ export const Navbar = () => {
             <Person />
             Log in
           </Button>
-          <Button variant='buttonPrimaryBlueDestructive' className='rounded-full'>
+          <Button variant='buttonPrimaryBlueDestructive' className='rounded-full h-[45px] w-[45px] p-0 flex justify-center items-center'>
             <QuestionMark />
           </Button>
           <Button variant='buttonPrimaryOrangeDestructive' >

@@ -14,7 +14,7 @@ const buttonVariants = cva(
         buttonPrimaryOrangeDestructive:
           "bg-[rgba(237, 159, 114, 0.10)] rounded-3xl border-2 border-[#ED9F72]",
         buttonPrimaryBlueDestructive:
-          "bg-transparent rounded-3xl border-2 border-[rgba(114, 122, 237, 0.50)]",
+          "bg-transparent rounded-3xl border-2 border-[rgba(114, 122, 237, 0.50)] hover:bg-[#727AED] border-[rgba(114, 122, 237, 0.50)] hover:text-white font-sansBold text-[16px]",
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:

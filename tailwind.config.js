@@ -22,13 +22,16 @@ module.exports = {
       },
       backgroundColor: {
         body: '#F7F7FC',
+        quizCart: '#ffffff',
+        progress: 'rgba(16, 16, 16, 0.15)'
       },
       colors: {
         gray: 'rgba(16, 16, 16, 0.35)',
+        darkGray: 'rgba(16, 16, 16, 0.50)',
+        count: 'rgba(237, 159, 114, 0.75)',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
@@ -59,11 +62,6 @@ module.exports = {
           foreground: 'hsl(var(--card-foreground))',
         },
       },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
       keyframes: {
         'accordion-down': {
           from: { height: 0 },
@@ -77,6 +75,9 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+      backgroundImage: {
+        quiz: "url('/images/backgroundquiz.svg')",
       },
     },
   },
