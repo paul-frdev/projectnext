@@ -10,19 +10,19 @@ import { Menu } from '@/icons/menu'
 
 export const Navbar = () => {
   return (
-    <div>
+    <div className='font-body'>
       <Container className='flex justify-between items-center mb-[56px]'>
         <div>
-          <Link href='/' className="text-6xl font-logo font-bold">
+          <Link href='/' className="text-6xl font-logo font-sansBold">
             BG <span className="text-primary">Capital</span>
           </Link>
         </div>
         <div className='flex justify-between items-center gap-x-6'>
-          <Button variant='buttonPrimaryBlue' >
+          <Button variant='buttonPrimaryBlue' className='font-sansBold' >
             <Person />
             Log in
           </Button>
-          <Button variant='buttonPrimaryBlueDestructive' >
+          <Button variant='buttonPrimaryBlueDestructive' className='rounded-full'>
             <QuestionMark />
           </Button>
           <Button variant='buttonPrimaryOrangeDestructive' >

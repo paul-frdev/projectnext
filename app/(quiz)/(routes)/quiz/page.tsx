@@ -1,7 +1,8 @@
+import { QuizClient } from '@/components/quizClient';
 
 const QuizClientPage = () => {
   return (
-    <div>start quiz</div>
+    <QuizClient />
   )
 }
 

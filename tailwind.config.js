@@ -15,10 +15,16 @@ module.exports = {
         primaryBlue: '0px 6px 12px 0px rgba(114, 122, 237, 0.50)',
         primaryOrange: '0px 6px 12px 0px rgba(237, 159, 114, 0.50)',
       },
+      fontFamily: {
+        sansBold: 'SansBold',
+        sansMedium: 'SansMedium',
+        sansRegular: 'SansRegular',
+      },
       backgroundColor: {
-        body: '#F7F7FC'
+        body: '#F7F7FC',
       },
       colors: {
+        gray: 'rgba(16, 16, 16, 0.35)',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
