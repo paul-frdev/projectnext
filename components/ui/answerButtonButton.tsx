@@ -1,13 +1,12 @@
 import React from 'react'
 import { Button } from './button'
-import { AnswerOptions } from '@/types/quizQuestions'
 
 
 interface QuestionButtonProps {
   answer: string;
   nextQuestion?: (data: string) => void;
 }
-export const QuestionButton: React.FC<QuestionButtonProps> = ({ answer, nextQuestion }) => {
+export const AnswerButton: React.FC<QuestionButtonProps> = ({ answer, nextQuestion }) => {
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const eventTarget = event.target as HTMLDivElement;

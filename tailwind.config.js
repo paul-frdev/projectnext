@@ -40,6 +40,7 @@ module.exports = {
         basic: '#101010',
         placeholderInput: 'rgba(16, 16, 16, 0.25)',
         error: '#ED7272',
+        colorTitle: '#727AED',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

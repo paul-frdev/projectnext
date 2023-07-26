@@ -1,6 +1,6 @@
 import React from 'react'
 import { Title } from './title'
-import { QuestionsList } from '../questionsList'
+import { AnswersList } from '../answersListList'
 import { Question } from '@/types/quizQuestions'
 
 
@@ -17,7 +17,7 @@ export const QuizCart: React.FC<QuizCartProps> = ({ question, nextQuestion }) =>
         </Title>
       </div>
       <div>
-        <QuestionsList answers={question?.answerOptions} nextQuestion={nextQuestion} />
+        <AnswersList answers={question?.answerOptions} nextQuestion={nextQuestion} />
       </div>
     </div>
   )

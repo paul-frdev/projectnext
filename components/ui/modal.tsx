@@ -1,59 +1,46 @@
-import { Dialog, Transition } from '@headlessui/react';
-import { FC, Fragment } from 'react';
-import { X } from 'lucide-react';
-import { Title } from './title';
-import { Subtitle } from './subtitle';
 import { cn } from '@/lib/utils';
-import { IconButton } from './iconButton';
-
+import { FC } from 'react';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 interface ModalProps {
-  title?: string;
-  description?: string;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
   isOpen: boolean;
+  className?: string;
   onClose: () => void;
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  showButtonClose?: boolean;
 }
 
-export const Modal: FC<ModalProps> = ({ isOpen, onClose, children, title, description }) => {
+export const Modal: FC<ModalProps> = ({
+  title,
+  description,
+  isOpen,
+  onClose,
+  className,
+  showButtonClose = false,
+  children,
+}) => {
+  const onChange = (open: boolean) => {
+    if (!open) {
+      onClose();
+    }
+  };
   return (
-    <Transition show={isOpen} appear as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={onClose}>
-        <div className="fixed inset-0 bg-black bg-opacity-50" />
-        <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4 text-center">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
-            >
-              <Dialog.Panel className="w-full max-w-xl overflow-hidden rounded-lg text-left align-middle">
-                <div
-                  className={cn(
-                    `relative flex w-full items-center overflow-hidden bg-white px-4 pb-8 pt-14 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8`,
-                    title && description ? 'flex-col' : 'flex-row'
-                  )}
-                >
-                  <div className="absolute right-4 top-4">
-                    <IconButton icon={<X size={15} />} onClick={onClose} />
-                  </div>
-                  {title && description && (
-                    <>
-                      <Title>{title}</Title>
-                      <Subtitle >{description}</Subtitle>
-                    </>
-                  )}
-                  {children}
-                </div>
-              </Dialog.Panel>
-            </Transition.Child>
-          </div>
-        </div>
-      </Dialog>
-    </Transition>
+    <Dialog open={isOpen} onOpenChange={onChange}>
+      <DialogContent showCloseButton={showButtonClose} className={cn(`bg-white w-full`, className)}>
+        <DialogHeader>
+          <DialogTitle>{title}</DialogTitle>
+          <DialogDescription>{description}</DialogDescription>
+        </DialogHeader>
+        {children}
+      </DialogContent>
+    </Dialog>
   );
 };

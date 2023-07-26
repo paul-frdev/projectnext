@@ -97,13 +97,16 @@ export const QuizList = () => {
 
   return (
     <div className='w-full flex flex-col justify-center items-center gap-y-9'>
-      <QuizNav
-        prevQuestion={prevQuestion}
-        disabled={currentQuestionIndex === 0}
-        countPoints={countPoints}
-        secondPoints={secondPoints}
-        index={currentQuestionIndex}
-      />
+      {mainQuestions.length > currentQuestionIndex ? (
+        <QuizNav
+          prevQuestion={prevQuestion}
+          disabled={currentQuestionIndex === 0}
+          countPoints={countPoints}
+          secondPoints={secondPoints}
+          index={currentQuestionIndex}
+        />
+
+      ) : null}
       {currentQuestion?.showMessageCart ? (
         <MessageList
           currentQuestionId={currentQuestion?.id}

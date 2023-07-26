@@ -108,7 +108,7 @@ export const ReceiveEmailForm: React.FC<ReceiveEmailFormProps> = ({ initialData 
                       onCheckedChange={field.onChange}
                     />
                   </FormControl>
-                  <FormLabel className='space-y-0 text-sm font-sansRegular tracking-[0.4px]'>
+                  <FormLabel className='space-y-0 text-sm font-sansRegular tracking-[0.4px] cursor-pointer'>
                     I would like to receive tips, offers, know-how,
                     and more from Prosperi via emails
                   </FormLabel>
