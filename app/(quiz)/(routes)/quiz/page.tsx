@@ -2,7 +2,9 @@ import { QuizClient } from '@/components/quizClient';
 
 const QuizClientPage = () => {
   return (
-    <QuizClient />
+    <div>
+      <QuizClient />
+    </div>
   )
 }
 

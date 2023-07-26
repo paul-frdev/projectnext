@@ -15,6 +15,13 @@ module.exports = {
         primaryBlue: '0px 6px 12px 0px rgba(114, 122, 237, 0.50)',
         primaryOrange: '0px 6px 12px 0px rgba(237, 159, 114, 0.50)',
       },
+      borderColor: {
+        basicInput: 'rgba(114, 122, 237, 0.25)',
+        orange: 'rgba(237, 159, 114, 0.75)',
+        hoverInput: 'rgba(114, 122, 237, 0.50)',
+        focusInput: '#727AED',
+        errorInput: '#ED7272',
+      },
       fontFamily: {
         sansBold: 'SansBold',
         sansMedium: 'SansMedium',
@@ -23,12 +30,16 @@ module.exports = {
       backgroundColor: {
         body: '#F7F7FC',
         quizCart: '#ffffff',
-        progress: 'rgba(16, 16, 16, 0.15)'
+        bgOrange: 'rgba(237, 159, 114, 0.75)',
+        progress: 'rgba(16, 16, 16, 0.15)',
       },
       colors: {
         gray: 'rgba(16, 16, 16, 0.35)',
         darkGray: 'rgba(16, 16, 16, 0.50)',
         count: 'rgba(237, 159, 114, 0.75)',
+        basic: '#101010',
+        placeholderInput: 'rgba(16, 16, 16, 0.25)',
+        error: '#ED7272',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

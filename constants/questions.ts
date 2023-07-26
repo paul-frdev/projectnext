@@ -45,7 +45,6 @@ export const mainQuestions = [
       { id: 3, answerText: '5000-9999$' },
       { id: 4, answerText: '10000$ +' },
     ],
-    
   },
   {
     questionText: 'I want to Earn...',
@@ -66,6 +65,7 @@ export const mainQuestions = [
     ],
   },
   {
+    id: 7,
     questionText: 'I feel about money most of the time...',
     answerOptions: [
       { id: 1, answerText: 'Depressed' },
@@ -73,6 +73,11 @@ export const mainQuestions = [
       { id: 3, answerText: 'Insecure' },
       { id: 4, answerText: 'Certain' },
     ],
+  },
+  {
+    id: 7,
+    showMessageCart: true,
+    showMessage: false,
   },
   {
     questionText:
@@ -92,6 +97,7 @@ export const mainQuestions = [
     ],
   },
   {
+    id: 11,
     questionText: 'I don’t earn more because of...',
     answerOptions: [
       { id: 1, answerText: 'Fear' },
@@ -99,6 +105,11 @@ export const mainQuestions = [
       { id: 3, answerText: 'Lack of discipline' },
       { id: 4, answerText: 'Lack of time and focus' },
     ],
+  },
+  {
+    id: 11,
+    showMessageCart: true,
+    showMessage: false,
   },
   {
     questionText: 'I hear about the value of investing...',
@@ -110,6 +121,7 @@ export const mainQuestions = [
     ],
   },
   {
+    id: 14,
     questionText: 'If I want to get more money I should...',
     answerOptions: [
       { id: 1, answerText: 'Win in a casino' },
@@ -117,6 +129,11 @@ export const mainQuestions = [
       { id: 3, answerText: 'Ask my Family' },
       { id: 4, answerText: 'Be smart and start to invest' },
     ],
+  },
+  {
+    id: 14,
+    showMessageCart: true,
+    showMessage: false,
   },
   {
     questionText: 'If I invest $200 in Apple shares 5 years I’ll have...',
@@ -137,12 +154,18 @@ export const mainQuestions = [
     ],
   },
   {
+    id: 19,
     questionText: 'I don’t invest because of...',
     answerOptions: [
       { id: 1, answerText: 'Fear' },
       { id: 2, answerText: 'Lack of knowledge' },
       { id: 3, answerText: 'Don’t know how to start' },
     ],
+  },
+  {
+    id: 19,
+    showMessageCart: true,
+    showMessage: false,
   },
   {
     questionText: 'Next 20$ I want to spend to...',
@@ -163,27 +186,27 @@ export const mainQuestions = [
 
 export const showMessage = [
   {
-    id: 5,
+    id: 7,
     src: '/images/coinbox.png',
     subtitle: 'We will show you how your money situation',
     spanText: 'can be improved',
     text: 'Now let’s assess your financial mindset...',
   },
   {
-    id: 8,
+    id: 11,
     src: '/images/coinhand.png',
     title: 'Discover the investment principles to build your wealth.',
     text: 'It can help you to generate additional income opportunities and to improve your lifestyle.',
   },
   {
-    id: 10,
+    id: 14,
     src: '/images/apple.png',
     subtitle: 'Just $200 invested in',
     spanText: 'Apple',
     text: 'five years ago is worth $28 000 today.',
   },
   {
-    id: 13,
+    id: 19,
     src: '/images/bitcoin.png',
     subtitle: 'Just $100 invested in',
     spanText: 'Bitcoin',

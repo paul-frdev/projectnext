@@ -1,21 +1,32 @@
 import { showMessage } from '@/constants/questions';
-import { ShowMessage } from '@/types/quizQuestions';
+import { Question, ShowMessage } from '@/types/quizQuestions';
 import React from 'react'
 import { MessageCart } from './messageCart';
 
 
 interface MessageListProps {
-  currentIndex?: number;
-  setCurrentQuestionIndex?: (index: number) => void;
+  currentQuestion: Question;
+  currentQuestionId: number;
+  currentQuestionIndex: number;
+  toNextQuestion?: (index: number) => void;
 }
-export const MessageList: React.FC<MessageListProps> = ({ currentIndex, setCurrentQuestionIndex }) => {
+export const MessageList: React.FC<MessageListProps> = ({ currentQuestionId, toNextQuestion, currentQuestion, currentQuestionIndex }) => {
 
   const showMessageCart: ShowMessage[] = showMessage;
+
   return (
     <>
       {showMessageCart.map((item) => {
         return (
-          currentIndex === item.id ? <MessageCart setCurrentQuestionIndex={setCurrentQuestionIndex} key={item.id} message={item} currentIndex={currentIndex} /> : null
+          currentQuestionId === item.id ?
+            <MessageCart
+              currentQuestionIndex={currentQuestionIndex}
+              currentQuestion={currentQuestion}
+              toNextQuestion={toNextQuestion}
+              key={item.id}
+              message={item}
+              currentQuestionId={currentQuestionId}
+            /> : null
         )
       })}
     </>

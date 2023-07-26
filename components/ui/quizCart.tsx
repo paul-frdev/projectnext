@@ -10,7 +10,7 @@ interface QuizCartProps {
 }
 export const QuizCart: React.FC<QuizCartProps> = ({ question, nextQuestion }) => {
   return (
-    <div className='w-full max-w-[792px] h-full max-h-[431px] bg-quizCart rounded-t-[38px]'>
+    <div className='w-full max-w-[792px] h-[431px] bg-quizCart rounded-t-[38px]'>
       <div className='flex justify-center items-center h-[107px] max-w-[792px] w-full bg-gradient-to-r from-[#727AED] to-[#5A60BA] rounded-t-[38px] mb-12'>
         <Title className='text-white text-[20px] tracking-[0.3px] leading-[28px]'>
           {question?.questionText}
