@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import { QuizCart } from './ui/quizCart'
+import { QuizCart } from './quizCart'
 import { QuizNav } from './quizNav'
 import { mainQuestions } from '@/constants/questions'
 import { Question } from '@/types/quizQuestions'
@@ -70,7 +70,7 @@ export const QuizList = () => {
   const prevQuestion = useCallback(() => {
 
     setCurrentQuestionIndex((prev) => prev - 1);
-    if (currentQuestionIndex >= 1 && currentQuestionIndex <= 5) {
+    if (currentQuestionIndex >= 1 && currentQuestionIndex <= 6) {
       setCountPoints(countPoints - 20)
     }
 
@@ -116,6 +116,7 @@ export const QuizList = () => {
         />
       ) : mainQuestions.length > currentQuestionIndex ? (
         <QuizCart
+          currentQuestionIndex={currentQuestionIndex}
           question={currentQuestion}
           nextQuestion={nextQuestion}
         />

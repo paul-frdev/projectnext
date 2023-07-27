@@ -15,11 +15,11 @@ export const AnswerButton: React.FC<QuestionButtonProps> = ({ answer, nextQuesti
 
 
   return (
-    <div className='w-full max-w-[384px] h-full max-h-[48px] rounded-lg mb-6 last:mb-12'>
+    <div className='w-full max-w-[384px] h-full max-h-[48px] rounded-lg mb-3 px-4 md:px-0'>
       <Button
         onClick={handleClick}
         variant='buttonPrimaryBlueDestructive'
-        className='w-full rounded-lg text-[16px] tracking-[0.32px] leading-[24px] px-6'
+        className='w-full h-[48px] text-left rounded-lg text-[16px] tracking-[0.32px] leading-[24px] px-6'
       >
         {answer}
       </Button>

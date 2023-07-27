@@ -5,16 +5,16 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-between rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-between rounded-md text-sm font-medium ring-offset-background duration-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        buttonPrimaryBlue: "bg-[#727AED] text-white hover:bg-[#666DD4] justify-center gap-x-1  uppercase h-[40px] min-w-[134px] rounded-3xl drop-shadow-primaryBlue font-bold tracking-[1px] uppercase",
+        buttonPrimaryBlue: " bg-[#727AED] text-white hover:bg-[#666DD4] justify-center gap-x-1  uppercase h-[40px] min-w-[134px] rounded-3xl  font-bold tracking-[1px] uppercase",
         buttonPrimaryOrange: "bg-[#ED9F72] text-white hover:bg-[#666DD4]  uppercase h-[40px] w-[134px] rounded-3xl drop-shadow-primaryOrange font-bold tracking-[1px] uppercase",
         buttonPrimaryOrangeDestructive:
           "bg-[rgba(237, 159, 114, 0.10)] rounded-3xl border-2 border-[#ED9F72]",
         buttonPrimaryBlueDestructive:
-          "bg-transparent rounded-3xl border-2 border-[rgba(114, 122, 237, 0.50)] hover:bg-[#727AED] border-[rgba(114, 122, 237, 0.50)] hover:text-white font-sansBold text-[16px]",
+          "bg-transparent rounded-3xl border-2 border-[rgba(114, 122, 237, 0.50)] hover:bg-[#727AED] hover:border-transparent hover:text-white font-sansBold text-[16px]",
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:

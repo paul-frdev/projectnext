@@ -26,7 +26,7 @@ export const MessageCart: React.FC<MessageCartProps> = ({ message, currentQuesti
         {message.id === 7 || message.id === 11 ? <Image src={message.src} alt='image' width={280} height={179} /> : null}
         {message.id === 11 && <Title className='text-lg leading-[24px] tracking-[0.32px] text-basic'>{message.title}</Title>}
         <p className='text-[16px] font-sansMedium leading-[24px] tracking-[0.32px] text-left max-w-[280px] w-full'>
-          {message.subtitle} <span className='text-[#727AED] text-[16px] font-sansRegular'>{message.spanText} </span>{message.text}
+          {message.subtitle} <span className='text-[#727AED] text-[16px] font-sansBold'>{message.spanText} </span>{message.text}
         </p>
         {message.id === 14 || message.id === 19 ? <Image src={message.src} alt='image' width={280} height={179} /> : null}
       </div>

@@ -18,11 +18,11 @@ export const Navbar = () => {
           </Link>
         </div>
         <div className='flex justify-between items-center gap-x-6'>
-          <Button variant='buttonPrimaryBlue' className='font-sansBold' >
+          <Button variant='buttonPrimaryBlue' className='hidden md:flex font-sansBold' >
             <Person />
             Log in
           </Button>
-          <Button variant='buttonPrimaryBlueDestructive' className='rounded-full h-[45px] w-[45px] p-0 flex justify-center items-center hover:bg-transparent'>
+          <Button variant='buttonPrimaryBlueDestructive' className='flex rounded-full h-[45px] shadow-buttonShadow w-[45px] p-0 justify-center items-center hover:bg-transparent'>
             <QuestionMark />
           </Button>
           <Button variant='buttonPrimaryOrangeDestructive' >

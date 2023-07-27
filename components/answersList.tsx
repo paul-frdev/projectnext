@@ -1,5 +1,5 @@
 import React from 'react'
-import { AnswerButton } from './ui/answerButtonButton'
+import { AnswerButton } from './ui/answerButton'
 import { AnswerOptions } from '@/types/quizQuestions'
 
 

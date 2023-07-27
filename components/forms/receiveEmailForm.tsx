@@ -66,7 +66,7 @@ export const ReceiveEmailForm: React.FC<ReceiveEmailFormProps> = ({ initialData 
   return (
     <>
       <ReceiveEmailModal />
-      <Title className='w-full max-w-[384px] text-center'>Enter your email to see the quiz results</Title>
+      <Title className='w-full max-w-[384px] text-center text-[26px] md:text-[32px] tracking-[0.5px]'>Enter your email to see the quiz results</Title>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -83,7 +83,7 @@ export const ReceiveEmailForm: React.FC<ReceiveEmailFormProps> = ({ initialData 
                   </FormLabel>
                   <FormControl>
                     <Input
-                      className={form.formState.errors.email && 'border-errorInput'}
+                      className={form.formState.errors.email && 'border-errorInput focus:border-errorInput'}
                       disabled={loading}
                       placeholder='example@gmail.com'
                       {...field}

@@ -16,7 +16,7 @@ export const ReceiveEmailModal = () => {
 
   const title = () => {
     return (
-      <Title className='text-xl tracking-[0.3px] text-center'>
+      <Title className=' text-lg md:text-xl tracking-[0.27px] md:tracking-[0.3px] text-center'>
         Do you want to receive emails with special offers, <span className='text-colorTitle'>investing know-how</span> and market digests?
       </Title>
     )
@@ -24,7 +24,7 @@ export const ReceiveEmailModal = () => {
   return (
     <Modal
       title={title()}
-      className='max-w-[456px] h-[530px] py-12 px-9 !rounded-[48px] gap-0'
+      className='max-w-[456px] h-[530px] py-12 px-4 md:px-9 !rounded-[48px] gap-0'
       isOpen={viewModal.isOpen}
       onClose={viewModal.onClose}
     >
@@ -37,7 +37,7 @@ export const ReceiveEmailModal = () => {
         </div>
       </div>
       <div className='w-full flex justify-center items-center'>
-        <LinkHref href='/checkout-results' className='uppercase no-underline tracking-[1.25px] leading-[14px]'>
+        <LinkHref href='/checkout-results' className='uppercase text-center no-underline tracking-[1.25px] leading-[14px]'>
           I know everything about investments
         </LinkHref>
       </div>
