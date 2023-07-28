@@ -95,12 +95,7 @@ export const QuizList = () => {
           currentQuestionIndex={currentQuestionIndex}
         />
       ) : mainQuestions.length > currentQuestionIndex ? (
-        <QuizCart
-          currentQuestionIndex={currentQuestionIndex}
-          question={currentQuestion}
-          answers={answers}
-          nextQuestion={nextQuestion}
-        />
+        <QuizCart currentQuestionIndex={currentQuestionIndex} question={currentQuestion} answers={answers} nextQuestion={nextQuestion} />
       ) : null}
     </div>
   );
