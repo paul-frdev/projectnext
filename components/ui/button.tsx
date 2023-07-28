@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        buttonPrimaryBlue: " bg-[#727AED] text-white hover:bg-[#666DD4] justify-center gap-x-1  uppercase h-[40px] min-w-[134px] rounded-3xl  font-bold tracking-[1px] uppercase",
+        buttonPrimaryBlue: " bg-[#727AED] text-white hover:bg-[#666DD4] justify-center gap-x-1 h-[40px] min-w-[134px] rounded-3xl  font-bold tracking-[1px]",
         buttonPrimaryOrange: "bg-[#ED9F72] text-white hover:bg-[#666DD4]  uppercase h-[40px] w-[134px] rounded-3xl drop-shadow-primaryOrange font-bold tracking-[1px] uppercase",
         buttonPrimaryOrangeDestructive:
           "bg-[rgba(237, 159, 114, 0.10)] rounded-3xl border-2 border-[#ED9F72]",

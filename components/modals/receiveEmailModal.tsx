@@ -33,7 +33,7 @@ export const ReceiveEmailModal = () => {
           <Image src={ReceiveEmailImage} alt='ReceiveEmailImage' className='w-[200px] h-[200px]' />
         </div>
         <div className='w-full flex justify-center items-center mb-2'>
-          <Button onClick={() => route.push('/checkout-results')} className='w-[264px]'>Yes, I’m in</Button>
+          <Button onClick={() => route.push('/selling-page')} className='w-[264px]'>Yes, I’m in</Button>
         </div>
       </div>
       <div className='w-full flex justify-center items-center'>

@@ -6,16 +6,18 @@ import { CircularProgressBar } from './ui/CircularProgressBar'
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
 import { CircularProgress } from '@chakra-ui/react'
+import { useRouter } from 'next/navigation'
+import { container, itemLi } from '@/constants/variants'
 
 export const CheckoutResultsClient = () => {
 
-
   const [progress, setProgress] = useState(0);
+  const router = useRouter();
 
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prevProgress) => prevProgress + 1);
-    }, 90); 
+    }, 90);
 
 
     if (progress >= 100) {
@@ -25,20 +27,14 @@ export const CheckoutResultsClient = () => {
     return () => clearInterval(interval);
   }, [progress]);
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 2,
-      },
-    },
-  };
 
-  const itemLi = {
-    hidden: { opacity: 0.5 },
-    show: { opacity: 1.1 },
-  };
+  useEffect(() => {
+    setTimeout(() => {
+      router.push('/enter-email')
+    }, 11000);
+  }, [router])
+
+
 
 
   return (

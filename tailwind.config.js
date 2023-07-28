@@ -32,6 +32,7 @@ module.exports = {
         quizCart: '#ffffff',
         bgOrange: 'rgba(237, 159, 114, 0.75)',
         progress: 'rgba(16, 16, 16, 0.15)',
+        bgBlue: '#727AED'
       },
       colors: {
         gray: 'rgba(16, 16, 16, 0.35)',

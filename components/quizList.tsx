@@ -10,26 +10,17 @@ import { useRouter } from 'next/navigation'
 
 export const QuizList = () => {
 
+
   const [currentQuestion, setCurrentQuestion] = useState<Question | any>(null)
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
 
   const [answers, setAnswers] = useState<string[]>([])
+  const [currentAnswer, setCurrentAnswer] = useState('')
 
   const [countPoints, setCountPoints] = useState(0)
   const [secondPoints, setSecondPoints] = useState(0)
 
-
   const router = useRouter()
-
-  // console.log('countPoints', countPoints);
-  // console.log('secondPoints', secondPoints);
-  // console.log('currentQuestionIndex', currentQuestionIndex);
-  // console.log('currentQuestion', currentQuestion);
-  // console.log('currentQuestion?.showMessageCart', currentQuestion?.showMessageCart, currentQuestion?.id);
-  // console.log('currentQuestionid', currentQuestion?.id);
-  // console.log('answers', answers);
-
-
 
   const questionsData: Question[] = mainQuestions;
 
@@ -46,7 +37,7 @@ export const QuizList = () => {
     }
 
     if (currentQuestionIndex === 20) {
-      router.push('/enter-email')
+      router.push('/checkout-results')
     }
 
   }, [currentQuestionIndex, questionsData, router]);
@@ -54,6 +45,7 @@ export const QuizList = () => {
 
 
   const nextQuestion = useCallback((event: string) => {
+    setCurrentAnswer(event)
     setAnswers([...answers, event]);
     setCurrentQuestionIndex((prev) => prev + 1);
     showQuestion(currentQuestionIndex + 1);
@@ -118,6 +110,7 @@ export const QuizList = () => {
         <QuizCart
           currentQuestionIndex={currentQuestionIndex}
           question={currentQuestion}
+          answers={answers}
           nextQuestion={nextQuestion}
         />
       ) : null}

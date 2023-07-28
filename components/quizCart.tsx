@@ -7,12 +7,12 @@ import { cn } from '@/lib/utils';
 
 interface QuizCartProps {
   question: Question | null;
-  nextQuestion?: (data: string) => void;
   currentQuestionIndex?: number;
+  answers: string[];
+  nextQuestion?: (data: string) => void;
 }
 export const QuizCart: React.FC<QuizCartProps> = ({ question, nextQuestion, currentQuestionIndex }) => {
 
-  
   return (
     <div className='w-full max-w-[792px] h-[387px] md:h-[431px] bg-quizCart rounded-t-[38px]'>
       <div className={cn(`flex transition-all duration-150 justify-center items-center h-[107px] max-w-[792px] w-full bg-gradient-to-r from-[#727AED] to-[#5A60BA] rounded-t-[38px] mb-6 md:mb-12`, currentQuestionIndex === 19 ? 'h-[170px] md:h-[130px]' : 'h-[107px]')}>

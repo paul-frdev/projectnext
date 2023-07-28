@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'start your investing journey',
 }
 
-export default function QuizLayout({
+export default function LandingLayout({
   children,
 }: {
   children: React.ReactNode
