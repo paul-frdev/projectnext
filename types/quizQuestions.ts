@@ -1,7 +1,7 @@
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 export type Question = {
-  id?: number,
+  id?: number;
   questionText?: string;
   answerOptions?: AnswerOptions[];
   point?: string;
@@ -20,7 +20,7 @@ export type ShowMessage = {
   id?: number;
   title?: string;
   src: string | StaticImport;
-  text?: string
+  text?: string;
   subtitle?: string;
   spanText?: string;
-}
+};

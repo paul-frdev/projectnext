@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { ReceiveEmailModal } from '@/components/modals/receiveEmailModal';
-import React, { useEffect, useState } from 'react';
+import { ReceiveEmailModal } from "@/components/modals/receiveEmailModal";
+import React, { useEffect, useState } from "react";
 
 const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState(false);

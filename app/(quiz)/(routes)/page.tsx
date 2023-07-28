@@ -1,9 +1,7 @@
-import { StartQuizClient } from '@/components/startQuizClient';
+import { StartQuizClient } from "@/components/startQuizClient";
 
 const StartQuizPage = () => {
-  return (
-    <StartQuizClient />
-  )
-}
+  return <StartQuizClient />;
+};
 
 export default StartQuizPage;

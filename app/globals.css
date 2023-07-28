@@ -10,22 +10,22 @@ body,
 
 @layer base {
   @font-face {
-    font-family: 'SansBold';
-    src: url('../fonts/GoogleSans-Bold.woff2') format('woff2');
-    font-weight: 700; 
-    font-style: normal; 
+    font-family: "SansBold";
+    src: url("../fonts/GoogleSans-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
   }
   @font-face {
-    font-family: 'SansMedium';
-    src: url('../fonts/GoogleSans-Medium.woff2') format('woff2');
-    font-weight: 500; 
-    font-style: normal; 
+    font-family: "SansMedium";
+    src: url("../fonts/GoogleSans-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
   }
   @font-face {
-    font-family: 'SansRegular';
-    src: url('../fonts/GoogleSans-Regular.woff2') format('woff2');
-    font-weight: 400; 
-    font-style: normal; 
+    font-family: "SansRegular";
+    src: url("../fonts/GoogleSans-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
   }
   :root {
     --background: 0 0% 100%;

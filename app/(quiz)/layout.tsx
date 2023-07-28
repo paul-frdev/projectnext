@@ -1,22 +1,18 @@
-import { Navbar } from '@/components/navbar'
-import type { Metadata } from 'next'
+import { Navbar } from "@/components/navbar";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Quiz',
-  description: 'start your investing journey',
-}
+  title: "Quiz",
+  description: "start your investing journey",
+};
 
-export default function QuizLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function QuizLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className='bg-body'>
+      <body className="bg-body">
         <Navbar />
         {children}
       </body>
     </html>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import { cn } from '@/lib/utils';
-import React, { FC, MouseEventHandler } from 'react';
+import { cn } from "@/lib/utils";
+import React, { FC, MouseEventHandler } from "react";
 
 interface IconButtonProps {
   className?: string;

@@ -1,10 +1,8 @@
-import { SellingClient } from '@/components/sellingClient'
-import React from 'react'
+import { SellingClient } from "@/components/sellingClient";
+import React from "react";
 
 const SellingPage = () => {
-  return (
-    <SellingClient />
-  )
-}
+  return <SellingClient />;
+};
 
-export default SellingPage
+export default SellingPage;

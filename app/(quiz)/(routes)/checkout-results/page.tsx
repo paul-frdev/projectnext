@@ -1,10 +1,8 @@
-import { CheckoutResultsClient } from '@/components/checkoutResultsClient'
-import React from 'react'
+import { CheckoutResultsClient } from "@/components/checkoutResultsClient";
+import React from "react";
 
 const CheckoutResultsPage = () => {
-  return (
-    <CheckoutResultsClient />
-  )
-}
+  return <CheckoutResultsClient />;
+};
 
-export default CheckoutResultsPage
+export default CheckoutResultsPage;

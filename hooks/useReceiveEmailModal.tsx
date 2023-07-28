@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
 interface ReceiveEmailModalStore {
   isOpen: boolean;
@@ -6,7 +6,7 @@ interface ReceiveEmailModalStore {
   onClose: () => void;
 }
 
-const useReceiveEmailModal = create<ReceiveEmailModalStore>((set) => ({
+const useReceiveEmailModal = create<ReceiveEmailModalStore>(set => ({
   isOpen: false,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
