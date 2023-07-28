@@ -33,9 +33,14 @@ module.exports = {
         bgOrange: "rgba(237, 159, 114, 0.75)",
         progress: "rgba(16, 16, 16, 0.15)",
         bgBlue: "#727AED",
+        bgGreen: '#5EB25D',
+        bgOrange: '#ED9F72'
       },
       colors: {
         gray: "rgba(16, 16, 16, 0.35)",
+        progressBg: 'rgba(114, 122, 237, 0.25)',
+        green: '#5EB25D',
+        lightGray: 'rgba(255, 255, 255, 0.75)',
         darkGray: "rgba(16, 16, 16, 0.50)",
         count: "rgba(237, 159, 114, 0.75)",
         circular: "rgba(237, 159, 114, 1)",

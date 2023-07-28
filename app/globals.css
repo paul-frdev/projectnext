@@ -10,20 +10,20 @@ body,
 
 @layer base {
   @font-face {
-    font-family: "SansBold";
-    src: url("../fonts/GoogleSans-Bold.woff2") format("woff2");
+    font-family: 'SansBold';
+    src: url('../fonts/GoogleSans-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
   }
   @font-face {
-    font-family: "SansMedium";
-    src: url("../fonts/GoogleSans-Medium.woff2") format("woff2");
+    font-family: 'SansMedium';
+    src: url('../fonts/GoogleSans-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
   }
   @font-face {
-    font-family: "SansRegular";
-    src: url("../fonts/GoogleSans-Regular.woff2") format("woff2");
+    font-family: 'SansRegular';
+    src: url('../fonts/GoogleSans-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
   }
@@ -89,6 +89,20 @@ body,
     --destructive-foreground: 0 85.7% 97.3%;
 
     --ring: 217.2 32.6% 17.5%;
+  }
+  .progress-bar-container {
+    width: 100%;
+    max-width: 644px;
+    height: 8px;
+    background-color: rgba(114, 122, 237, 0.25);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background-color: #727AED;
+    transition: width 0.6s ease; 
   }
 }
 
