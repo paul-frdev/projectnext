@@ -1,13 +1,14 @@
 "use client";
-import { checkoutResults } from "@/constants";
-import { SmallCheck } from "@/icons/smallCheck";
-import React, { useEffect, useState } from "react";
+
 import { CircularProgressBar } from "./ui/CircularProgressBar";
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import { CircularProgress } from "@chakra-ui/react";
-import { useRouter } from "next/navigation";
+import { checkoutResults } from "@/constants";
 import { container, itemLi } from "@/constants/variants";
+import { SmallCheck } from "@/icons/smallCheck";
+import { cn } from "@/lib/utils";
+import { CircularProgress } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 export const CheckoutResultsClient = () => {
   const [progress, setProgress] = useState(0);

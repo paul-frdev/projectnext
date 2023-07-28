@@ -1,8 +1,7 @@
-import React from "react";
-
+import { MessageCart } from "./messageCart";
 import { showMessage } from "@/constants/questions";
 import { Question, ShowMessage } from "@/types/quizQuestions";
-import { MessageCart } from "./messageCart";
+import React from "react";
 
 interface MessageListProps {
   currentQuestion: Question;

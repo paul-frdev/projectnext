@@ -1,8 +1,8 @@
-import React from "react";
-import { Title } from "./ui/title";
 import { AnswersList } from "./answersList";
-import { Question } from "@/types/quizQuestions";
+import { Title } from "./ui/title";
 import { cn } from "@/lib/utils";
+import { Question } from "@/types/quizQuestions";
+import React from "react";
 
 interface QuizCartProps {
   question: Question | null;

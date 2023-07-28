@@ -1,16 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
-import { Container } from "./ui/container";
-import Link from "next/link";
+import { SalesPanel } from "./landing/salesPanel";
 import { Button } from "./ui/button";
+import { Container } from "./ui/container";
+import { fadeIn, staggerTextContainer } from "@/constants/variants";
+import { Menu } from "@/icons/menu";
 import { Person } from "@/icons/person";
 import { QuestionMark } from "@/icons/questionMark";
-import { Menu } from "@/icons/menu";
 import { motion } from "framer-motion";
-import { fadeIn, staggerTextContainer } from "@/constants/variants";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { SalesPanel } from "./landing/salesPanel";
+import React, { useState } from "react";
 
 export const Navbar = () => {
   const [logedIn, setLogedIn] = useState(true);

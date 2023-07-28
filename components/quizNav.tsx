@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
 import { Button } from "./ui/button";
-import { Typography } from "./ui/typography";
 import { Progress } from "./ui/progress";
+import { Typography } from "./ui/typography";
 import { ArrowBackward } from "@/icons/arrowBackward";
+import React from "react";
 
 interface QuizNavProps {
   index: number;

@@ -1,11 +1,11 @@
 "use client";
 
-import { Timer } from "@/icons/timer";
-import React from "react";
 import { Button } from "../ui/button";
-import { motion } from "framer-motion";
 import { fadeIn } from "@/constants/variants";
 import { useTimer } from "@/hooks/useTimer";
+import { Timer } from "@/icons/timer";
+import { motion } from "framer-motion";
+import React from "react";
 
 export const SalesPanel = () => {
   const { formattedTime } = useTimer();

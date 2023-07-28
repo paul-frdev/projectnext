@@ -1,12 +1,11 @@
 "use client";
 
-import * as React from "react";
+import { Button } from "./button";
+import { IconButton } from "./iconButton";
+import { cn } from "@/lib/utils";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-import { IconButton } from "./iconButton";
-import { Button } from "./button";
+import * as React from "react";
 
 const Dialog = DialogPrimitive.Root;
 

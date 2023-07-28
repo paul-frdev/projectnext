@@ -1,6 +1,6 @@
-import React from "react";
 import { AnswerButton } from "./ui/answerButton";
 import { AnswerOptions } from "@/types/quizQuestions";
+import React from "react";
 
 interface QuestionsListProps {
   answers: AnswerOptions[] | undefined;

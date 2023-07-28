@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
 import { QuizList } from "./quizList";
 import { Container } from "./ui/container";
+import React from "react";
 
 export const QuizClient = () => {
   return (

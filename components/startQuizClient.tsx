@@ -1,16 +1,16 @@
 "use client";
 
-import React from "react";
-import { Container } from "./ui/container";
-import { Subtitle } from "./ui/subtitle";
-import Image from "next/image";
 import startquizImage from "../public/images/startquiz.png";
 import { Button } from "./ui/button";
+import { Container } from "./ui/container";
 import { LinkHref } from "./ui/linkHref";
-import { useRouter } from "next/navigation";
+import { Subtitle } from "./ui/subtitle";
 import { Typography } from "./ui/typography";
-import { motion } from "framer-motion";
 import { fadeIn, imageZoom, staggerTextContainer } from "@/constants/variants";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import React from "react";
 
 export const StartQuizClient = () => {
   const route = useRouter();

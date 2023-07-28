@@ -1,24 +1,23 @@
 "use client";
 "use client";
-import React, { useState } from "react";
 
+import { ReceiveEmailModal } from "../modals/receiveEmailModal";
 import { Button } from "../ui/button";
-
-import * as z from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { Checkbox } from "../ui/checkbox";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
 import { Input } from "../ui/input";
-import { toast } from "react-hot-toast";
-import { useParams, useRouter } from "next/navigation";
-import { Email } from "@/types";
-import { Checkbox } from "../ui/checkbox";
-import { Typography } from "../ui/typography";
-import { Lock } from "@/icons/lock";
 import { Title } from "../ui/title";
-import { cn } from "@/lib/utils";
-import { ReceiveEmailModal } from "../modals/receiveEmailModal";
+import { Typography } from "../ui/typography";
 import useReceiveEmailModal from "@/hooks/useReceiveEmailModal";
+import { Lock } from "@/icons/lock";
+import { cn } from "@/lib/utils";
+import { Email } from "@/types";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useParams, useRouter } from "next/navigation";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
+import * as z from "zod";
 
 type ReceiveEmailFormValues = z.infer<typeof formSchema>;
 
