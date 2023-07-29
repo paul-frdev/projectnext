@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { Variants, motion } from "framer-motion";
 import React from "react";
 
-export const Typography = ({ children, className, variants }: { children: string | string[]; className?: string; variants?: Variants }) => {
+export const Typography = ({ children, className, variants }: { children: React.ReactNode; className?: string; variants?: Variants }) => {
   return (
     <motion.p
       variants={variants}

@@ -11,13 +11,15 @@ module.exports = {
       },
     },
     extend: {
-      dropShadow: {
+      boxShadow: {
         primaryBlue: "0px 6px 12px 0px rgba(114, 122, 237, 0.50)",
         primaryOrange: "0px 6px 12px 0px rgba(237, 159, 114, 0.50)",
+        light: "0px 6px 12px 0px rgba(0, 0, 0, 0.15)",
       },
       borderColor: {
         basicInput: "rgba(114, 122, 237, 0.25)",
         orange: "rgba(237, 159, 114, 0.75)",
+        lightOrange: "rgba(237, 159, 114, 0.25)",
         hoverInput: "rgba(114, 122, 237, 0.50)",
         focusInput: "#727AED",
         errorInput: "#ED7272",
@@ -33,15 +35,19 @@ module.exports = {
         bgOrange: "rgba(237, 159, 114, 0.75)",
         progress: "rgba(16, 16, 16, 0.15)",
         bgBlue: "#727AED",
-        bgGreen: '#5EB25D',
-        bgOrange: '#ED9F72'
+        bgGreen: "#5EB25D",
+        hoverGreen: "#58A657",
+        bgOrange: "#ED9F72",
       },
       colors: {
         gray: "rgba(16, 16, 16, 0.35)",
-        progressBg: 'rgba(114, 122, 237, 0.25)',
-        green: '#5EB25D',
-        lightGray: 'rgba(255, 255, 255, 0.75)',
+        progressBg: "rgba(114, 122, 237, 0.25)",
+        green: "#5EB25D",
+        orange: "#ED9F72",
+        lightGray: "rgba(255, 255, 255, 0.75)",
+        extraLight: "rgba(255, 255, 255, 0.15)",
         darkGray: "rgba(16, 16, 16, 0.50)",
+        grayLinks: "rgba(16, 16, 16, 0.75)",
         count: "rgba(237, 159, 114, 0.75)",
         circular: "rgba(237, 159, 114, 1)",
         basic: "#101010",
@@ -50,6 +56,7 @@ module.exports = {
         colorTitle: "#727AED",
         checkColor: "rgba(16, 16, 16, 0.75)",
         buttonShadow: "0px 6px 12px 0px rgba(114, 122, 237, 0.50)",
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -99,6 +106,9 @@ module.exports = {
       },
       backgroundImage: {
         quiz: "url('/images/backgroundquiz.svg')",
+        leftCoins: "url('/images/left-coins.svg')",
+        rightCoins: "url('/images/right-coins.svg')",
+        dollars: "url('/images/dollars.svg')",
       },
     },
   },
