@@ -9,7 +9,7 @@ export const Footer = () => {
   return (
     <footer className="bg-white h-[72px]">
       <Container className="flex justify-between items-center h-full">
-        <Typography className="text-darkGray w-auto">Academy@2023</Typography>
+        <Typography className="text-darkGray w-auto">Academy@{new Date().getFullYear()}</Typography>
         <LinkHref className="block text-darkGray" href="mailto:support@academy.io">
           support@brytix.io
         </LinkHref>
