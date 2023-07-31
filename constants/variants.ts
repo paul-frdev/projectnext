@@ -8,6 +8,27 @@ export const staggerTextContainer = {
   },
 };
 
+export const staggerContainer = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+
+export const staggerBlockContainer = {
+  initial: {},
+  animate: {
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
 export const fadeIn = {
   initial: {
     y: 0,
@@ -16,7 +37,7 @@ export const fadeIn = {
   animate: {
     y: 0,
     opacity: 1,
-    transition: { type: "tween", duration: 0.3 },
+    transition: { type: "tween", duration: 1 },
   },
 };
 
@@ -39,4 +60,63 @@ export const container = {
 export const itemLi = {
   hidden: { opacity: 0.5 },
   show: { opacity: 1.1 },
+};
+
+
+export const fadeInLeft = {
+  initial: {
+    x: 70,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: { type: 'tween', duration: 1.1 },
+  },
+};
+
+export const fadeInUp = {
+  initial: {
+    y: 70,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { type: 'tween', duration: 1.1 },
+  },
+};
+
+export const fadeInRight = {
+  initial: {
+    x: -70,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: { type: 'tween', duration: 1.1 },
+  },
+};
+
+export const fadeInDown = {
+  initial: {
+    y: -70,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { type: 'tween', duration: 1.1 },
+  },
+};
+
+
+export const LaptopAnim = {
+  initial: { x: 150, opacity: 0 },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: { type: 'spring', duration: 4 },
+  },
 };

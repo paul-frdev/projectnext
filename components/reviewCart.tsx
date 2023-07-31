@@ -15,7 +15,7 @@ export const ReviewCart: React.FC<ReviewCartProps> = ({ data }) => {
   return (
     <>
       {data.map((item: Review) => (
-        <SalesCart key={item.id} className="mb-8 w-full max-w-[328px] shadow-light">
+        <SalesCart key={item.id} className="w-full max-w-[328px] md:max-w-[588px] lg:h-full lg:max-h-[336px] shadow-light">
           <div className="flex flex-col justify-start items-start gap-y-4">
             <div className="flex justify-start items-center gap-x-4">
               <Image src={item.src} alt="acatar" width={64} height={64} />
