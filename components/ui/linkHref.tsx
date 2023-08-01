@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Variant } from 'framer-motion';
+import { Variant } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 

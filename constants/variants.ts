@@ -109,7 +109,6 @@ export const fadeInDown = {
   },
 };
 
-
 export const RightImageAnim = {
   hidden: { x: 100, opacity: 0 },
   animate: {
@@ -120,7 +119,7 @@ export const RightImageAnim = {
 };
 
 export const LeftImageAnim = {
-  initial: { x: -100, opacity: 0  },
+  initial: { x: -100, opacity: 0 },
   animate: {
     x: 0,
     opacity: 1,

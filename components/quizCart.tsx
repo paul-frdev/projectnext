@@ -2,6 +2,7 @@ import { AnswersList } from "./answersList";
 import { Title } from "./ui/title";
 import { cn } from "@/lib/utils";
 import { Question } from "@/types/quizQuestions";
+import { motion } from "framer-motion";
 import React from "react";
 
 interface QuizCartProps {
@@ -12,7 +13,22 @@ interface QuizCartProps {
 }
 export const QuizCart: React.FC<QuizCartProps> = ({ question, nextQuestion, currentQuestionIndex }) => {
   return (
-    <div className="w-full max-w-[792px] h-[387px] md:h-[431px] bg-quizCart rounded-t-[38px]">
+    <motion.div
+      initial="initial"
+      animate="animate"
+      variants={{
+        initial: {
+          y: 0,
+          opacity: 0,
+        },
+        animate: {
+          y: 0,
+          opacity: 1,
+          transition: { type: "tween", duration: 1, delay: 0.1 },
+        },
+      }}
+      className="w-full max-w-[792px] h-[387px] md:h-[431px] bg-quizCart rounded-t-[38px]"
+    >
       <div
         className={cn(
           `flex transition-all duration-150 justify-center items-center h-[107px] max-w-[792px] w-full bg-gradient-to-r from-[#727AED] to-[#5A60BA] rounded-t-[38px] mb-6 md:mb-12`,
@@ -26,6 +42,6 @@ export const QuizCart: React.FC<QuizCartProps> = ({ question, nextQuestion, curr
       <div>
         <AnswersList answers={question?.answerOptions} nextQuestion={nextQuestion} />
       </div>
-    </div>
+    </motion.div>
   );
 };

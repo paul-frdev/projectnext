@@ -13,10 +13,10 @@ export const CircularProgressBar: React.FC<CircularProgressBarProps> = ({ value 
   return (
     <motion.div
       className="relative"
-      initial={{ opacity: 0, scale: 0.5 }}
+      initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.5 }}
-      transition={{ duration: 3.2 }}
+      exit={{ opacity: 0, scale: 0.7 }}
+      transition={{ duration: 1.5 }}
     >
       <CircularProgress value={progress} color="#ED9F72" trackColor="rgba(237, 159, 114, 0.25)" capIsRound thickness={8} size="196px">
         <CircularProgressLabel className="text-circular font-sansBold text-[32px] tracking-[0.5px]">{`${progress}%`}</CircularProgressLabel>

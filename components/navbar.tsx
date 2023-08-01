@@ -7,7 +7,7 @@ import { fadeIn, staggerTextContainer } from "@/constants/variants";
 import { Menu } from "@/icons/menu";
 import { Person } from "@/icons/person";
 import { QuestionMark } from "@/icons/questionMark";
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -27,15 +27,22 @@ export const Navbar = () => {
       whileInView={"animate"}
       viewport={{ once: true, amount: 0.1 }}
     >
-      <Container className={cn(`mb-[56px] py-2`, pathname === "/selling-page" ? 'grid grid-cols-4 grid-rows-2 md:flex md:justify-between md:items-center' : 'flex justify-between items-center')}>
+      <Container
+        className={cn(
+          `mb-[56px] py-2`,
+          pathname === "/selling-page"
+            ? "grid grid-cols-4 grid-rows-2 md:flex md:justify-between md:items-center"
+            : "flex justify-between items-center"
+        )}
+      >
         <motion.div variants={fadeIn}>
           <Link href="/" className="text-3xl font-logo font-sansBold">
             Academy
           </Link>
         </motion.div>
         {pathname === "/selling-page" && (
-          <div className='row-start-2 col-start-1 col-end-5 w-full'>
-            <SalesPanel className='m-auto' />
+          <div className="row-start-2 col-start-1 col-end-5 w-full">
+            <SalesPanel className="m-auto" />
           </div>
         )}
         <motion.div variants={fadeIn} className="flex justify-end md:justify-between items-center gap-x-6 col-start-3 col-end-5">

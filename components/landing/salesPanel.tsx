@@ -4,49 +4,43 @@ import { Button } from "../ui/button";
 import { fadeIn } from "@/constants/variants";
 import { useTimer } from "@/hooks/useTimer";
 import { Timer } from "@/icons/timer";
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 export const SalesPanel = ({ className }: { className?: string }) => {
   const { formattedTime } = useTimer();
   const [isPanel, setIsPanel] = useState(false);
-  const [innerHeight, setInnerHeight] = useState(0)
-
-  console.log(innerHeight);
+  const [innerHeight, setInnerHeight] = useState(0);
 
   useEffect(() => {
     const scrollBody = () => {
+      console.log("scroll");
+
       const windowHeight = window.innerHeight;
-      setInnerHeight(windowHeight)
+      setInnerHeight(windowHeight);
       if (window.scrollY > 80) {
-        setIsPanel(true)
+        setIsPanel(true);
         if (window.scrollY > 1900) {
-          setIsPanel(false)
+          setIsPanel(false);
         }
       } else {
-        setIsPanel(false)
+        setIsPanel(false);
       }
-    }
+    };
 
     window.addEventListener("scroll", scrollBody);
 
-    return () => window.removeEventListener("scroll", scrollBody)
+    return () => window.removeEventListener("scroll", scrollBody);
   }, [isPanel, innerHeight]);
-
-
-  const panelAnimation = {
-    hidden: { opacity: 0, scale: 0.5 },
-    visible: { opacity: 1, scale: 1 },
-  };
-
 
   return (
     <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={panelAnimation}
-      className={cn(`flex justify-between items-center w-full max-w-[384px] rounded-3xl gap-x-2 bg-bgBlue p-2`, className, isPanel ? 'center-fixed' : '')}
+      className={cn(
+        `flex justify-between items-center w-full max-w-[384px] rounded-3xl gap-x-2 bg-bgBlue p-2`,
+        className,
+        isPanel ? "center-fixed" : ""
+      )}
     >
       <p className="flex flex-col justify-center items-center bg-white w-[94px] h-[40px] rounded-3xl">
         <span className="text-[#959BF1] font-sansBold text-sm leading-[21px] tracking-[0.21px] line-through inline -mb-[7px]">$15.99</span>

@@ -3,6 +3,7 @@
 import { Button } from "./ui/button";
 import { Title } from "./ui/title";
 import { Question, ShowMessage } from "@/types/quizQuestions";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 
@@ -19,7 +20,22 @@ export const MessageCart: React.FC<MessageCartProps> = ({ message, currentQuesti
     toNextQuestion?.(currentQuestionIndex + 1);
   };
   return (
-    <div className="w-full max-w-[328px] flex flex-col justify-center items-center gap-y-9 h-full max-h-[455px] py-8 px-6 bg-white rounded-3xl">
+    <motion.div
+      initial="initial"
+      animate="animate"
+      variants={{
+        initial: {
+          y: 0,
+          opacity: 0,
+        },
+        animate: {
+          y: 0,
+          opacity: 1,
+          transition: { type: "tween", duration: 1, delay: 0.1 },
+        },
+      }}
+      className="w-full max-w-[328px] flex flex-col justify-center items-center gap-y-9 h-full max-h-[455px] py-8 px-6 bg-white rounded-3xl"
+    >
       <div className="flex flex-col justify-center items-center gap-y-6">
         {message.id === 7 || message.id === 11 ? <Image src={message.src} alt="image" width={280} height={179} /> : null}
         {message.id === 11 && <Title className="text-lg leading-[24px] tracking-[0.32px] text-basic">{message.title}</Title>}
@@ -34,6 +50,6 @@ export const MessageCart: React.FC<MessageCartProps> = ({ message, currentQuesti
           Continue
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 };

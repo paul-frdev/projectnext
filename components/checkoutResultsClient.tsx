@@ -33,7 +33,22 @@ export const CheckoutResultsClient = () => {
   }, [router]);
 
   return (
-    <section className="flex flex-col justify-center items-center gap-y-9">
+    <motion.section
+      initial="initial"
+      animate="animate"
+      variants={{
+        initial: {
+          y: 0,
+          opacity: 0,
+        },
+        animate: {
+          y: 0,
+          opacity: 1,
+          transition: { type: "tween", duration: 1, delay: 0.1 },
+        },
+      }}
+      className="flex flex-col justify-center items-center gap-y-9"
+    >
       <div className="flex flex-col justify-center items-center gap-y-9 w-full max-w-[328px] bg-white py-8 px-6 rounded-3xl">
         <div>{progress <= 100 && <CircularProgressBar value={progress} />}</div>
         <div className="w-full">
@@ -58,12 +73,12 @@ export const CheckoutResultsClient = () => {
                   </motion.span>
                   <CircularProgress className="!absolute top-[0] z-1 left-0 w-[12px] h-[12px]" size={12} isIndeterminate color="#727AED" />
                 </div>
-                {result.title}
+                <span> {result.title}</span>
               </motion.li>
             ))}
           </motion.ul>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
