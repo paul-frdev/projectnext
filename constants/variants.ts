@@ -18,7 +18,6 @@ export const staggerContainer = {
   },
 };
 
-
 export const staggerBlockContainer = {
   initial: {},
   animate: {
@@ -62,7 +61,6 @@ export const itemLi = {
   show: { opacity: 1.1 },
 };
 
-
 export const fadeInLeft = {
   initial: {
     x: 70,
@@ -71,52 +69,66 @@ export const fadeInLeft = {
   animate: {
     x: 0,
     opacity: 1,
-    transition: { type: 'tween', duration: 1.1 },
+    transition: { type: "tween", duration: 1.1 },
   },
 };
 
 export const fadeInUp = {
   initial: {
-    y: 70,
+    y: 30,
     opacity: 0,
   },
   animate: {
     y: 0,
     opacity: 1,
-    transition: { type: 'tween', duration: 1.1 },
+    transition: { type: "tween", duration: 1.1 },
   },
 };
 
 export const fadeInRight = {
   initial: {
-    x: -70,
+    x: -30,
     opacity: 0,
   },
   animate: {
     x: 0,
     opacity: 1,
-    transition: { type: 'tween', duration: 1.1 },
+    transition: { type: "tween", duration: 1.1 },
   },
 };
 
 export const fadeInDown = {
   initial: {
-    y: -70,
+    y: -30,
     opacity: 0,
   },
   animate: {
     y: 0,
     opacity: 1,
-    transition: { type: 'tween', duration: 1.1 },
+    transition: { type: "tween", duration: 1.1 },
   },
 };
 
 
-export const LaptopAnim = {
-  initial: { x: 150, opacity: 0 },
+export const RightImageAnim = {
+  hidden: { x: 100, opacity: 0 },
   animate: {
     x: 0,
     opacity: 1,
-    transition: { type: 'spring', duration: 4 },
+    transition: { type: "spring", duration: 3, stiffness: 100, damping: 10, delay: 0.7 },
   },
+};
+
+export const LeftImageAnim = {
+  initial: { x: -100, opacity: 0  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: { type: "spring", duration: 3, stiffness: 100, damping: 10, delay: 0.7 },
+  },
+};
+
+export const countVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, y: 0 },
 };

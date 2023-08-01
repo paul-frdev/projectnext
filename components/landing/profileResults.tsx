@@ -12,7 +12,7 @@ import { Dollar } from "@/icons/dollar";
 import { Growth } from "@/icons/growth";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { LaptopAnim, fadeIn, fadeInDown, fadeInLeft, fadeInRight, fadeInUp, staggerBlockContainer, staggerContainer } from '@/constants/variants';
+import { RightImageAnim, countVariants, fadeIn, fadeInDown, fadeInLeft, fadeInRight, fadeInUp, staggerBlockContainer, staggerContainer, staggerTextContainer } from '@/constants/variants';
 
 export const ProfileResults = () => {
   const [progressValue, setProgressValue] = useState(0);
@@ -26,25 +26,29 @@ export const ProfileResults = () => {
   }, []);
 
   return (
-    <motion.section
-      variants={staggerContainer}
-      initial="initial"
-      whileInView={'animate'}
-      viewport={{ once: false, amount: 0.5 }}
+    <section
       className="w-full  mb-16"
     >
-      <div>
+      <motion.div
+        variants={staggerContainer}
+        initial="initial"
+        whileInView={'animate'}
+        viewport={{ once: false, amount: 0.2 }}
+      >
         <Title variants={fadeIn} className="text-3xl md:text-4xl md:text-left tracking-[0.25px] text-basic text-center mb-6">Your profile summary:</Title>
         <div className='md:flex md:flex-wrap lg:flex-nowrap md:justify-between md:items-center md:w-full md:max-w-[800px] lg:max-w-[1200px] lg:gap-x-2 md:mb-8 m-auto'>
           <SalesCart variants={fadeIn} className="max-w-[384px] md:max-w-[364px] min-[810px]:max-w-[384px] bg-bgBlue flex flex-col items-start gap-y-4 m-auto mb-4">
             <div className="flex justify-between items-center w-full">
               <Title variants={fadeIn} className="text-white text-3xl md:text-4xl tracking-[0.25px]">Income</Title>
-              <SalesWidget variants={fadeIn}  className="max-w-[73px] h-[40px] px-3 py-2 text-[16px] font-sansBold leading-[24px] tracking-[0.1px] text-[#727AED]">
+              <SalesWidget variants={fadeIn} className="max-w-[73px] h-[40px] px-3 py-2 text-[16px] font-sansBold leading-[24px] tracking-[0.1px] text-[#727AED]">
                 Ready
               </SalesWidget>
             </div>
             <motion.div variants={fadeIn}>
-              <p className="text-[56px] font-sansBold text-lightGray tracking-[0.503px]">6/10</p>
+              <motion.p
+                variants={countVariants}
+                transition={{ duration: 0.5 }}
+                className="text-[56px] font-sansBold text-lightGray tracking-[0.503px]"><span className='w-[34px] inline-block'>6</span>/10</motion.p>
             </motion.div>
             <div>
               <motion.p variants={fadeIn} className="text-[16px] font-sansBold leading-[24px] tracking-[0.1px] text-white">
@@ -60,7 +64,7 @@ export const ProfileResults = () => {
               </SalesWidget>
             </div>
             <motion.div variants={fadeIn}>
-              <p className="text-[56px] font-sansBold text-lightGray tracking-[0.503px]">9/10</p>
+              <p className="text-[56px] font-sansBold text-lightGray tracking-[0.503px]"><span className='w-[34px] inline-block'>9</span>/10</p>
             </motion.div>
             <div>
               <motion.p variants={fadeIn} className="text-[16px] font-sansBold leading-[24px] tracking-[0.1px] text-white">
@@ -76,7 +80,7 @@ export const ProfileResults = () => {
               </SalesWidget>
             </div>
             <motion.div variants={fadeIn}>
-              <p className="text-[56px] font-sansBold text-lightGray tracking-[0.503px]">5/10</p>
+              <p className="text-[56px] font-sansBold text-lightGray tracking-[0.503px]"><span className='w-[34px] inline-block'>5</span>/10</p>
             </motion.div>
             <motion.div variants={fadeIn}>
               <p className="text-[16px] font-sansBold leading-[24px] tracking-[0.1px] text-white">
@@ -85,59 +89,93 @@ export const ProfileResults = () => {
             </motion.div>
           </SalesCart>
         </div>
-        <SalesCart variants={fadeInDown} className="max-w-[384px] md:max-w-[800px] lg:max-w-[1200px] flex flex-col md:gap-y-4 items-start m-auto mb-4 border-8 border-[#727AED] mb-9 md:mb-28">
-          <div className="flex flex-wrap md:flex-nowrap justify-start items-start md:items-center w-full gap-y-4 md:gap-x-4">
-            <Title variants={fadeIn} className="text-basic text-3xl md:text-4xl md:whitespace-nowrap tracking-[0.25px] md:mb-0">Your readiness:</Title>
-            <div className="mb-6 md:mb-0 w-full flex justify-start md:justify-center items-start md:items-center flex-wrap md:flex-nowrap md:gap-x-4">
-              <Typography className="text-colorTitle text-left text-3xl md:w-full md:max-w-[60px] font-sansBold tracking-[0.25px] mb-3 md:mb-0">{progressValue.toString()}%</Typography>
-              <AnimatedProgressBar percent={progressValue} />
+        <motion.div
+          initial="initial"
+          whileInView={'animate'}
+          viewport={{ once: false, amount: 0.2 }}
+          variants={staggerTextContainer}
+          className='full'
+        >
+          <SalesCart
+            variants={{
+              initial: {
+                y: 0,
+                opacity: 0,
+              },
+              animate: {
+                y: 0,
+                opacity: 1,
+                transition: { type: "tween", duration: 1, delay: 1 },
+              },
+            }}
+            className="max-w-[384px] md:max-w-[800px] lg:max-w-[1200px] flex flex-col md:gap-y-4 items-start m-auto mb-4 border-8 border-[#727AED] mb-9 md:mb-28"
+          >
+            <div className="flex flex-wrap md:flex-nowrap justify-start items-start md:items-center w-full gap-y-4 md:gap-x-4">
+              <Title variants={fadeIn} className="text-basic text-3xl md:text-4xl md:whitespace-nowrap tracking-[0.25px] md:mb-0">Your readiness:</Title>
+              <div className="mb-6 md:mb-0 w-full flex justify-start md:justify-center items-start md:items-center flex-wrap md:flex-nowrap md:gap-x-4">
+                <Typography className="text-colorTitle text-left text-3xl md:w-full md:max-w-[60px] font-sansBold tracking-[0.25px] mb-3 md:mb-0">{progressValue.toString()}%</Typography>
+                <AnimatedProgressBar percent={progressValue} />
+              </div>
             </div>
-          </div>
-          <div>
-            <motion.p variants={fadeIn} className="text-lg md:text-[20px] font-sansBold leading-[24px] tracking-[0.27px] leading-[24px] text-basic">
-              <motion.span variants={fadeIn} className="text-[#ED9F72]">7-day</motion.span> program is enough for you to start your investment journey
-            </motion.p>
-          </div>
-        </SalesCart>
-        <SalesCart variants={fadeInUp} className="max-w-[384px] md:max-w-[1200px] flex flex-col md:flex-row items-start md:items-center m-auto gap-y-6 md:gap-x-6  bg-bgOrange">
-          <div className='w-full'>
-            <div className="flex justify-between md:justify-start items-center w-full mb-6">
-              <Title variants={fadeIn} className="text-white text-3xl md:text-4xl tracking-[0.25px]">Investing is easier<br /> than you think</Title>
+            <div>
+              <motion.p variants={fadeIn} className="text-lg md:text-[20px] font-sansBold leading-[24px] tracking-[0.27px] leading-[24px] text-basic">
+                <motion.span variants={fadeIn} className="text-[#ED9F72]">7-day</motion.span> program is enough for you to start your investment journey
+              </motion.p>
             </div>
-            <div className="w-full flex justify-start items-start flex-col">
-              <SalesCart className="flex flex-col md:pl-12 justify-center md:justify-start items-start gap-y-4 md:mr-auto md:max-w-[407px]">
-                <motion.div variants={staggerBlockContainer} className="flex w-[80%] justify-start gap-x-3 items-center">
-                  <motion.span variants={fadeInRight} className="w-[24px] h-auto">
-                    <Dollar />
-                  </motion.span>
-                  <p className="text-[16px] text-basic font-sansBold tracking-[0.1px] leading-[24px]">You can start with $10</p>
-                </motion.div>
-                <motion.div variants={staggerBlockContainer} className="flex w-full justify-start gap-x-3 items-center">
-                  <motion.span variants={fadeInRight} className="w-[24px] h-auto">
-                    <Bank />
-                  </motion.span>
-                  <motion.p variants={fadeIn} className="text-[16px] text-basic font-sansBold tracking-[0.1px] leading-[24px]">
-                    No need
-                    <br /> for a Finance degree
-                  </motion.p>
-                </motion.div>
-                <motion.div variants={staggerBlockContainer} className="flex w-full justify-start gap-x-3 items-center">
-                  <motion.span variants={fadeInRight} className="w-[24px] h-auto">
-                    <Growth />
-                  </motion.span>
-                  <motion.p variants={fadeIn} className="text-[16px] text-basic font-sansBold tracking-[0.1px] leading-[24px]">
-                    No need
-                    <br /> to be a market expert
-                  </motion.p>
-                </motion.div>
-              </SalesCart>
+          </SalesCart>
+        </motion.div>
+        <motion.div
+          initial="initial"
+          whileInView={'animate'}
+          viewport={{ once: false, amount: 0.2 }}
+          variants={staggerTextContainer}
+          className='w-full'
+        >
+          <SalesCart variants={fadeInUp} className="max-w-[384px] md:max-w-[1200px] flex flex-col md:flex-row items-start md:items-center m-auto gap-y-6 md:gap-x-6  bg-bgOrange">
+            <div className='w-full'>
+              <div className="flex justify-between md:justify-start items-center w-full mb-6">
+                <Title variants={fadeIn} className="text-white text-3xl md:text-4xl tracking-[0.25px]">Investing is easier<br /> than you think</Title>
+              </div>
+              <div className="w-full flex justify-start items-start flex-col">
+                <SalesCart className="flex flex-col md:pl-12 justify-center md:justify-start items-start gap-y-4 md:mr-auto md:max-w-[407px]">
+                  <motion.div variants={staggerBlockContainer} className="flex w-[80%] justify-start gap-x-3 items-center">
+                    <motion.span variants={fadeInRight} className="w-[24px] h-auto">
+                      <Dollar />
+                    </motion.span>
+                    <motion.p variants={fadeInLeft} className="text-[16px] text-basic font-sansBold tracking-[0.1px] leading-[24px]">You can start with $10</motion.p>
+                  </motion.div>
+                  <motion.div variants={staggerBlockContainer} className="flex w-full justify-start gap-x-3 items-center">
+                    <motion.span variants={fadeInRight} className="w-[24px] h-auto">
+                      <Bank />
+                    </motion.span>
+                    <motion.p variants={fadeInLeft} className="text-[16px] text-basic font-sansBold tracking-[0.1px] leading-[24px]">
+                      No need
+                      <br /> for a Finance degree
+                    </motion.p>
+                  </motion.div>
+                  <motion.div variants={staggerBlockContainer} className="flex w-full justify-start gap-x-3 items-center">
+                    <motion.span variants={fadeInRight} className="w-[24px] h-auto">
+                      <Growth />
+                    </motion.span>
+                    <motion.p variants={fadeInLeft} className="text-[16px] text-basic font-sansBold tracking-[0.1px] leading-[24px]">
+                      No need
+                      <br /> to be a market expert
+                    </motion.p>
+                  </motion.div>
+                </SalesCart>
+              </div>
             </div>
-          </div>
-          <motion.div variants={LaptopAnim} className="w-full flex justify-center items-center">
-            <Image src={computerImage} alt="computer" className="w-full max-w-[597px] h-auto md:object-cover md:bg-center" />
-          </motion.div>
-        </SalesCart>
-      </div>
-    </motion.section>
+            <motion.div
+              initial="hidden"
+              whileInView="animate"
+              viewport={{ once: false }}
+              variants={RightImageAnim}
+              className="w-full flex justify-center items-center">
+              <Image src={computerImage} alt="computer" className="w-full max-w-[597px] h-auto md:object-cover md:bg-center" />
+            </motion.div>
+          </SalesCart>
+        </motion.div>
+      </motion.div>
+    </section>
   );
 };

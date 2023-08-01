@@ -1,4 +1,3 @@
-import { staggerContainer } from '@/constants/variants';
 import { Footer } from "./footer";
 import { GetAcademy } from "./landing/getAcademy";
 import { ProfileResults } from "./landing/profileResults";

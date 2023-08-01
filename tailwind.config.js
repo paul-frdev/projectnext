@@ -108,6 +108,8 @@ module.exports = {
         quiz: "url('/images/backgroundquiz.svg')",
         leftCoins: "url('/images/left-coins.svg')",
         rightCoins: "url('/images/right-coins.svg')",
+        leftCoinsBig: "url('/images/coinsLeft.png')",
+        rightCoinsBig: "url('/images/coinsRight.png')",
         dollars: "url('/images/dollars.png')",
         dollarsSvg: "url('/images/dollars.svg')",
       },
