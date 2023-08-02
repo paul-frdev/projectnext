@@ -14,7 +14,7 @@ import { usePathname, useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 export const Navbar = () => {
-  const [logedIn, setLogedIn] = useState(true);
+  const [logedIn, setLogedIn] = useState(false);
 
   const route = useRouter();
   const pathname = usePathname();
@@ -46,12 +46,12 @@ export const Navbar = () => {
           </div>
         )}
         <motion.div variants={fadeIn} className="flex justify-end md:justify-between items-center gap-x-6 col-start-3 col-end-5">
-          {!logedIn && (
-            <Button variant="buttonPrimaryBlue" className="hidden md:flex font-sansBold uppercase">
+          {!logedIn || pathname !== '/selling-page' ? (
+            <Button onClick={() => route.push('/sign-in')} variant="buttonPrimaryBlue" className="hidden md:flex font-sansBold uppercase">
               <Person />
               Log in
             </Button>
-          )}
+          ) : null}
           <Button
             variant="buttonPrimaryBlueDestructive"
             className="flex rounded-full h-[45px] shadow-buttonShadow w-[45px] p-0 justify-center items-center hover:bg-transparent hover:border-2 hover:border-[rgba(114, 122, 237, 0.50)]"

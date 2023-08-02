@@ -12,3 +12,8 @@ export type Review = {
   rating: number;
   text: string;
 };
+
+export type SignIn = {
+  email: string;
+  password: string;
+};

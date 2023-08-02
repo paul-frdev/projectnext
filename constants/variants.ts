@@ -143,3 +143,15 @@ export const countVariants = {
   hidden: { opacity: 0, y: -20 },
   visible: { opacity: 1, y: 0 },
 };
+
+export const openSection = {
+  initial: {
+    y: 0,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "tween", duration: 1, delay: 0.1 },
+  },
+};
