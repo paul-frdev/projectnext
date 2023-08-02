@@ -1,9 +1,11 @@
 "use client";
 
 import { SalesPanel } from "./landing/salesPanel";
+import { MobileNav } from "./mobileNav";
 import { Button } from "./ui/button";
 import { Container } from "./ui/container";
 import { fadeIn, staggerTextContainer } from "@/constants/variants";
+import { Close } from "@/icons/close";
 import { Menu } from "@/icons/menu";
 import { Person } from "@/icons/person";
 import { QuestionMark } from "@/icons/questionMark";
@@ -15,6 +17,7 @@ import React, { useState } from "react";
 
 export const Navbar = () => {
   const [logedIn, setLogedIn] = useState(false);
+  const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);
 
   const route = useRouter();
   const pathname = usePathname();
@@ -22,7 +25,7 @@ export const Navbar = () => {
   return (
     <motion.div
       variants={staggerTextContainer}
-      className="font-body"
+      className="font-body relative"
       initial="initial"
       whileInView={"animate"}
       viewport={{ once: true, amount: 0.1 }}
@@ -46,8 +49,8 @@ export const Navbar = () => {
           </div>
         )}
         <motion.div variants={fadeIn} className="flex justify-end md:justify-between items-center gap-x-6 col-start-3 col-end-5">
-          {!logedIn || pathname !== '/selling-page' ? (
-            <Button onClick={() => route.push('/sign-in')} variant="buttonPrimaryBlue" className="hidden md:flex font-sansBold uppercase">
+          {!logedIn || pathname !== "/selling-page" ? (
+            <Button onClick={() => route.push("/sign-in")} variant="buttonPrimaryBlue" className="hidden md:flex font-sansBold uppercase">
               <Person />
               Log in
             </Button>
@@ -58,11 +61,12 @@ export const Navbar = () => {
           >
             <QuestionMark />
           </Button>
-          <Button variant="buttonPrimaryOrangeDestructive">
-            <Menu />
+          <Button onClick={() => setIsOpenMobileNav(prev => !prev)} variant="buttonPrimaryOrangeDestructive">
+            {isOpenMobileNav ? <Close /> : <Menu />}
           </Button>
         </motion.div>
       </Container>
+      <MobileNav isOpen={isOpenMobileNav} />
     </motion.div>
   );
 };

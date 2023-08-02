@@ -17,3 +17,9 @@ export type SignIn = {
   email: string;
   password: string;
 };
+
+export type ItemLInk = {
+  id: number;
+  src: string;
+  title: string;
+};

@@ -25,13 +25,13 @@ export const StartQuizClient = () => {
           >
             Investment income know-how for beginners
           </motion.h1>
-          <Subtitle className="w-full max-w-[220px] text-center md:max-w-full mb-8">Take the 5 min quiz to see if you can do it too</Subtitle>
+          <Subtitle className="w-full max-w-[220px] text-center md:max-w-full m-auto">Take the 5 min quiz to see if you can do it too</Subtitle>
           <motion.div
             variants={imageZoom}
             initial="initial"
             whileInView={"animate"}
             whileHover="hover"
-            className="h-full w-full flex justify-center items-center mb-8"
+            className="h-full w-full flex justify-center items-center mb-8 mt-8"
           >
             <Image objectFit="contain" src={startquizImage} alt="start-quiz" className="w-full max-w-[384px] h-full max-h-[297.692px]" />
           </motion.div>

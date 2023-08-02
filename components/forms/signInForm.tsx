@@ -1,20 +1,20 @@
-'use client'
+"use client";
 
-import { SignIn } from '@/types';
-import { zodResolver } from '@hookform/resolvers/zod';
-import React, { useState } from 'react'
-import { useForm } from 'react-hook-form';
+import { Button } from "../ui/button";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
+import { Input } from "../ui/input";
+import { LinkHref } from "../ui/linkHref";
+import { Title } from "../ui/title";
+import { fadeIn, openSection } from "@/constants/variants";
+import { Eye } from "@/icons/eye";
+import { EyeClose } from "@/icons/eyeClose";
+import { cn } from "@/lib/utils";
+import { SignIn } from "@/types";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { Title } from '../ui/title';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '../ui/form';
-import { cn } from '@/lib/utils';
-import { Input } from '../ui/input';
-import { Button } from '../ui/button';
-import { LinkHref } from '../ui/linkHref';
-import { Eye } from '@/icons/eye';
-import { EyeClose } from '@/icons/eyeClose';
-import { motion } from 'framer-motion';
-import { fadeIn, openSection } from '@/constants/variants';
 
 type SignInFormValues = z.infer<typeof formSchema>;
 
@@ -24,20 +24,18 @@ interface SignInFormProps {
 
 const formSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
-  password: z.string()
+  password: z.string(),
 });
 
 export const SignInForm: React.FC<SignInFormProps> = ({ initialData }) => {
-
-
   const [loading, setLoading] = useState(false);
-  const [openPassword, setOpenPassword] = useState(false)
+  const [openPassword, setOpenPassword] = useState(false);
 
   const form = useForm<SignInFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: initialData || {
       email: "",
-      password: '',
+      password: "",
     },
   });
 
@@ -45,12 +43,7 @@ export const SignInForm: React.FC<SignInFormProps> = ({ initialData }) => {
     console.log(data);
   };
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      variants={openSection}
-      className='flex flex-col justify-center items-center px-4 md:px-0'
-    >
+    <motion.div initial="initial" animate="animate" variants={openSection} className="flex flex-col justify-center items-center px-4 md:px-0">
       <Title variants={fadeIn} className="w-full max-w-[384px] text-center text-[26px] md:text-[32px] tracking-[0.5px] mb-9">
         Welcome Back
       </Title>
@@ -61,7 +54,7 @@ export const SignInForm: React.FC<SignInFormProps> = ({ initialData }) => {
               control={form.control}
               name="email"
               render={({ field }) => (
-                <FormItem className='max-w-[328px] md:max-w-[384px] m-auto'>
+                <FormItem className="max-w-[328px] md:max-w-[384px] m-auto">
                   <FormLabel>
                     <motion.label
                       variants={fadeIn}
@@ -91,7 +84,7 @@ export const SignInForm: React.FC<SignInFormProps> = ({ initialData }) => {
               control={form.control}
               name="password"
               render={({ field }) => (
-                <FormItem className='max-w-[328px] md:max-w-[384px] m-auto'>
+                <FormItem className="max-w-[328px] md:max-w-[384px] m-auto">
                   <FormLabel>
                     <motion.label
                       variants={fadeIn}
@@ -105,33 +98,37 @@ export const SignInForm: React.FC<SignInFormProps> = ({ initialData }) => {
                   </FormLabel>
                   <FormControl>
                     <Input
-                      type={!openPassword ? 'password' : 'text'}
+                      type={!openPassword ? "password" : "text"}
                       className={cn(`m-auto`, form.formState.errors.email && "border-errorInput focus:border-errorInput")}
                       disabled={loading}
                       placeholder="Enter your password"
                       {...field}
                     />
                   </FormControl>
-                  <span className='absolute top-[50%] right-[16px]' onClick={() => setOpenPassword((prev) => !prev)}>
+                  <span className="absolute top-[50%] right-[42px] md:right-[16px]" onClick={() => setOpenPassword(prev => !prev)}>
                     {!openPassword ? <Eye /> : <EyeClose />}
                   </span>
                   <FormMessage className="absolute -bottom-[21px] left-[18px] font-sansRegular text-sm text-error" />
                 </FormItem>
               )}
             />
-            <LinkHref className='w-full text-[14px] absolute -bottom-[24px] right-[37px] md:right-[7px] flex justify-end items-center' href='/'>Forgot password?</LinkHref>
+            <LinkHref className="w-full text-[14px] absolute -bottom-[24px] right-[37px] md:right-[7px] flex justify-end items-center" href="/">
+              Forgot password?
+            </LinkHref>
           </div>
           <div className="w-full flex justify-center items-center mb-6">
             <Button disabled={loading} className="w-full max-w-[328px] md:max-w-[264px] h-[48px] uppercase" type="submit">
               Sign In
             </Button>
           </div>
-          <div className='flex justify-center gap-x-3 items-center w-full max-w-[282px] m-auto'>
-            <span className='text-[16px] font-sansRegular leading-[24px] tracking-[0.15px]'>Dont have an account?</span>
-            <LinkHref className='text-[16px] font-sansRegular leading-[24px] tracking-[0.15px]' href='/'>Start the Quiz</LinkHref>
+          <div className="flex justify-center gap-x-3 items-center w-full max-w-[282px] m-auto">
+            <span className="text-[16px] font-sansRegular leading-[24px] tracking-[0.15px]">Dont have an account?</span>
+            <LinkHref className="text-[16px] font-sansRegular leading-[24px] tracking-[0.15px]" href="/">
+              Start the Quiz
+            </LinkHref>
           </div>
         </form>
       </Form>
     </motion.div>
-  )
-}
+  );
+};

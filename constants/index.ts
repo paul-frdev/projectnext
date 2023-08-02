@@ -54,3 +54,30 @@ export const reviews = [
     text: "The Brytix team gave me the best knowledge to create my investment strategy. I know how to monitor performance, switch funds and add to my investment with little or no hassle. Even as an experienced investor, I believe it’s important to have an advisor like Brytix to help create an investment portfolio that mirrors your risk profile, investment timeline and requirements.",
   },
 ];
+
+export const navItems = [
+  {
+    id: 1,
+    title: "Terms & Conditions",
+    src: "/conditions",
+  },
+  {
+    id: 2,
+    title: "Privacy policy",
+    src: "/policy",
+  },
+  {
+    id: 3,
+    title: "Subscription terms",
+    src: "/terms",
+  },
+  {
+    id: 4,
+    title: "Help center FAQ",
+    src: "faq",
+  },
+  {
+    id: 5,
+    title: "support@academy.io",
+  },
+];

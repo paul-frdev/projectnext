@@ -1,10 +1,8 @@
-'use client'
+"use client";
 
-import React from 'react'
-import { SignInForm } from './forms/signInForm'
+import { SignInForm } from "./forms/signInForm";
+import React from "react";
 
 export const SignInClient = () => {
-  return (
-    <SignInForm />
-  )
-}
+  return <SignInForm />;
+};

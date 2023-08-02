@@ -155,3 +155,42 @@ export const openSection = {
     transition: { type: "tween", duration: 1, delay: 0.1 },
   },
 };
+
+export const childrenMobileNav = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, delay: 0.5 },
+  },
+  hidden: {
+    opacity: 0,
+    y: 100,
+    transition: { duration: 0.3, delay: 0 },
+  },
+};
+
+export const staggerMobileNav = {
+  opened: {
+    rotateX: 0,
+    y: 0,
+    height: "92vh",
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      when: "beforeChildren",
+      staggerChildren: 0.4,
+      delayChildren: 0.4,
+    },
+  },
+  closed: {
+    rotateX: 0,
+    y: -505,
+    height: "auto",
+    opacity: 0,
+    transition: {
+      duration: 1.5,
+      delay: 0,
+      when: "afterChildren",
+    },
+  },
+};
