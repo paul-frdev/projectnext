@@ -40,6 +40,18 @@ export const fadeIn = {
   },
 };
 
+export const fadeInCart = {
+  initial: {
+    y: 0,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "tween", duration: 1.5, delay: 0.5 },
+  },
+};
+
 export const imageZoom = {
   initial: { scale: 0.8, opacity: 0 },
   animate: { scale: 1, opacity: 1, transition: { duration: 0.3 } },

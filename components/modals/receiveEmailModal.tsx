@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { LinkHref } from "../ui/linkHref";
 import { Modal } from "../ui/modal";
 import { Title } from "../ui/title";
+import { Typography } from '../ui/typography';
 import ReceiveEmailImage from "/public/images/receive-email.png";
 import useReceiveEmailModal from "@/hooks/useReceiveEmailModal";
 import Image from "next/image";
@@ -16,9 +17,9 @@ export const ReceiveEmailModal = () => {
 
   const title = () => {
     return (
-      <Title className=" text-lg md:text-xl tracking-[0.27px] md:tracking-[0.3px] text-center">
+      <Typography className=" text-lg md:text-xl tracking-[0.27px] md:tracking-[0.3px] text-center text-basic font-sansBold">
         Do you want to receive emails with special offers, <span className="text-colorTitle">investing know-how</span> and market digests?
-      </Title>
+      </Typography>
     );
   };
   return (

@@ -10,6 +10,7 @@ import {
   RightImageAnim,
   countVariants,
   fadeIn,
+  fadeInCart,
   fadeInDown,
   fadeInLeft,
   fadeInRight,
@@ -187,7 +188,7 @@ export const ProfileResults = () => {
                 </Title>
               </div>
               <div className="w-full flex justify-start items-start flex-col">
-                <SalesCart className="flex flex-col md:pl-12 justify-center md:justify-start items-start gap-y-4 md:mr-auto md:max-w-[407px]">
+                <SalesCart variants={fadeInCart} className="flex flex-col md:pl-12 justify-center md:justify-start items-start gap-y-4 md:mr-auto md:max-w-[407px]">
                   <motion.div variants={staggerBlockContainer} className="flex w-[80%] justify-start gap-x-3 items-center">
                     <motion.span variants={fadeInRight} className="w-[24px] h-auto">
                       <Dollar />

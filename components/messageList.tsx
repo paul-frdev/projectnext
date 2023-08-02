@@ -22,7 +22,6 @@ export const MessageList: React.FC<MessageListProps> = ({ currentQuestionId, toN
             toNextQuestion={toNextQuestion}
             key={item.id}
             message={item}
-            currentQuestionId={currentQuestionId}
           />
         ) : null;
       })}

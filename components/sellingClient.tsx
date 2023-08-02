@@ -15,7 +15,6 @@ export const SellingClient = () => {
         <GetAcademy />
         <Testimonials />
       </Container>
-      <Footer />
     </>
   );
 };

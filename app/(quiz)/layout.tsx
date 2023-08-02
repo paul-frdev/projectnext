@@ -8,11 +8,9 @@ export const metadata: Metadata = {
 
 export default function QuizLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-body">
-        <Navbar />
-        {children}
-      </body>
-    </html>
+    <div className='w-full'>
+      <Navbar />
+      {children}
+    </div>
   );
 }

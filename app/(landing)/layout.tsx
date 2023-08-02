@@ -1,3 +1,4 @@
+import { Footer } from '@/components/footer';
 import { Navbar } from "@/components/navbar";
 import type { Metadata } from "next";
 
@@ -8,11 +9,10 @@ export const metadata: Metadata = {
 
 export default function LandingLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-body">
-        <Navbar />
-        <main>{children}</main>
-      </body>
-    </html>
+    <div className='w-full'>
+      <Navbar />
+      {children}
+      <Footer />
+    </div>
   );
 }

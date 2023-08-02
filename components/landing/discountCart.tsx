@@ -22,18 +22,18 @@ export const DiscountCart = () => {
       initial="initial"
       whileInView={"animate"}
       viewport={{ once: false, amount: 0.2 }}
-      className="flex flex-col justify-center overflow-hidden items-center w-full"
+      className="flex flex-col justify-center items-center w-full overflow-x-hidden"
     >
       <SalesCart
         variants={fadeInUp}
-        className="border-8 border-[#727AED] w-full max-w-[328px] md:max-w-[1200px] flex flex-col md:flex-row justify-center gap-y-6 relative mb-9"
+        className="border-8 border-[#727AED] w-full max-w-[328px] md:max-w-[1200px] relative flex flex-col md:flex-row justify-center gap-y-6 mb-9"
       >
         <motion.span
           initial="hidden"
           whileInView="animate"
           viewport={{ once: false }}
           variants={RightImageAnim}
-          className="absolute z-10 overflow-x-hidden -top-[68px] md:-top-[36px] -right-[8px] md:right-[65px] bg-rightCoins md:bg-rightCoinsBig w-[132px] md:w-[149px] h-[178px] md:h-[303px] bg-no-repeat object-center object-cover"
+          className="absolute z-10 top-0 overflow-hidden md:-top-[4px] right-[7px] md:right-[65px] bg-rightCoins md:bg-rightCoinsBig w-[132px] md:w-[149px] h-[178px] md:h-[303px] bg-no-repeat object-center object-cover"
         />
         <div className="flex flex-col md:flex-row justify-start md:justify-center items-start gap-y-6 w-full max-w-[264px] md:max-w-[570px]">
           <motion.div variants={fadeInRight} className="w-full max-w-[280px] m-auto">
@@ -57,7 +57,7 @@ export const DiscountCart = () => {
         </div>
         <motion.span
           variants={LeftImageAnim}
-          className="absolute overflow-x-hidden -bottom-[42px] md:-bottom-[40px] -left-[5px] md:left-[59px] bg-leftCoins md:bg-leftCoinsBig w-[100px] md:w-[213px] md:h-[286px] md:w-[145px] h-[169px] md:h-[191px]  bg-no-repeat object-center object-cover"
+          className="absolute overflow-hidden -bottom-[42px] md:-bottom-[74px] -left-[5px] md:left-[59px] bg-leftCoins md:bg-leftCoinsBig w-[100px] md:w-[213px] md:h-[286px] md:w-[145px] h-[169px] md:h-[191px]  bg-no-repeat object-center object-cover"
         />
       </SalesCart>
       <motion.div variants={fadeInUp} className="w-full flex justify-center mb-6 md:mb-9">

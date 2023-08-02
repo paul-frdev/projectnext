@@ -11,8 +11,8 @@ export const StarRating: React.FC<RatingProps> = ({ totalStars = 5 }) => {
   const createArray = (length: number) => [...Array(length)];
   return (
     <div className="flex justify-start items-center">
-      {createArray(totalStars).map((number: number, _index) => (
-        <StarIcon key={number} />
+      {createArray(totalStars).map((_number: undefined, index) => (
+        <StarIcon key={index} />
       ))}
     </div>
   );

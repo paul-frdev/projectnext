@@ -31,11 +31,11 @@ export const QuizCart: React.FC<QuizCartProps> = ({ question, nextQuestion, curr
     >
       <div
         className={cn(
-          `flex transition-all duration-150 justify-center items-center h-[107px] max-w-[792px] w-full bg-gradient-to-r from-[#727AED] to-[#5A60BA] rounded-t-[38px] mb-6 md:mb-12`,
+          `flex justify-center items-center h-[107px] max-w-[792px] w-full bg-gradient-to-r from-[#727AED] to-[#5A60BA] rounded-t-[38px] mb-6 md:mb-12`,
           currentQuestionIndex === 19 ? "h-[170px] md:h-[130px]" : "h-[107px]"
         )}
       >
-        <Title className="text-white max-w-[384px] w-full text-left text-[18px] tracking-[0.27px] leading-[24px] px-4 md:px-0 md:text-[20px] md:tracking-[0.3px] md:leading-[28px]">
+        <Title className="text-white transition-all duration-300 max-w-[384px] w-full text-left text-[18px] tracking-[0.27px] leading-[24px] px-4 md:px-0 md:text-[20px] md:tracking-[0.3px] md:leading-[28px]">
           {question?.questionText}
         </Title>
       </div>

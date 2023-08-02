@@ -9,12 +9,11 @@ import React from "react";
 
 interface MessageCartProps {
   message: ShowMessage;
-  currentQuestionId: number;
   currentQuestionIndex: number;
   currentQuestion: Question;
   toNextQuestion?: (index: number) => void;
 }
-export const MessageCart: React.FC<MessageCartProps> = ({ message, currentQuestion, currentQuestionIndex, toNextQuestion, currentQuestionId }) => {
+export const MessageCart: React.FC<MessageCartProps> = ({ message, currentQuestion, currentQuestionIndex, toNextQuestion }) => {
   const handleContinue = () => {
     currentQuestion.showMessage = false;
     toNextQuestion?.(currentQuestionIndex + 1);
@@ -34,7 +33,7 @@ export const MessageCart: React.FC<MessageCartProps> = ({ message, currentQuesti
           transition: { type: "tween", duration: 1, delay: 0.1 },
         },
       }}
-      className="w-full max-w-[328px] flex flex-col justify-center items-center gap-y-9 h-full max-h-[455px] py-8 px-6 bg-white rounded-3xl"
+      className="w-full max-w-[328px] flex flex-col justify-center items-center gap-y-9 h-full max-h-[500px] py-8 px-6 bg-white rounded-3xl"
     >
       <div className="flex flex-col justify-center items-center gap-y-6">
         {message.id === 7 || message.id === 11 ? <Image src={message.src} alt="image" width={280} height={179} /> : null}
