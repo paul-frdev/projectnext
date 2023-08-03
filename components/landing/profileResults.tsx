@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatedProgressBar } from "../ui/AnimatedProgressBar";
+import { Counter } from "../ui/counter";
 import { Title } from "../ui/title";
 import { Typography } from "../ui/typography";
 import { SalesCart } from "./salesCart";
@@ -59,15 +60,14 @@ export const ProfileResults = () => {
                 Ready
               </SalesWidget>
             </div>
-            <motion.div variants={fadeIn}>
-              <motion.p
-                variants={countVariants}
-                transition={{ duration: 0.5 }}
-                className="text-[56px] font-sansBold text-lightGray tracking-[0.503px]"
-              >
-                <span className="w-[34px] inline-block">6</span>/10
-              </motion.p>
-            </motion.div>
+            <div>
+              <p className="text-[56px] font-sansBold text-lightGray tracking-[0.503px]">
+                <span className="w-[34px] inline-block">
+                  <Counter targetNumber={6} />
+                </span>
+                /10
+              </p>
+            </div>
             <div>
               <motion.p variants={fadeIn} className="text-[16px] font-sansBold leading-[24px] tracking-[0.1px] text-white">
                 You have enough to start. We will teach you how to make more.
@@ -89,11 +89,14 @@ export const ProfileResults = () => {
                 Great
               </SalesWidget>
             </div>
-            <motion.div variants={fadeIn}>
+            <div>
               <p className="text-[56px] font-sansBold text-lightGray tracking-[0.503px]">
-                <span className="w-[34px] inline-block">9</span>/10
+                <span className="w-[34px] inline-block">
+                  <Counter targetNumber={9} />
+                </span>
+                /10
               </p>
-            </motion.div>
+            </div>
             <div>
               <motion.p variants={fadeIn} className="text-[16px] font-sansBold leading-[24px] tracking-[0.1px] text-white">
                 You are ready, you’ve got the distinct mindset to achieve success.
@@ -115,11 +118,14 @@ export const ProfileResults = () => {
                 Improve
               </SalesWidget>
             </div>
-            <motion.div variants={fadeIn}>
+            <div>
               <p className="text-[56px] font-sansBold text-lightGray tracking-[0.503px]">
-                <span className="w-[34px] inline-block">5</span>/10
+                <span className="w-[34px] inline-block">
+                  <Counter targetNumber={5} />
+                </span>
+                /10
               </p>
-            </motion.div>
+            </div>
             <motion.div variants={fadeIn}>
               <p className="text-[16px] font-sansBold leading-[24px] tracking-[0.1px] text-white">
                 You need to know a few simple things, and you are ready.

@@ -49,12 +49,16 @@ export const Navbar = () => {
           </div>
         )}
         <motion.div variants={fadeIn} className="flex justify-end md:justify-between items-center gap-x-6 col-start-3 col-end-5">
-          {!logedIn || pathname !== "/selling-page" ? (
-            <Button onClick={() => route.push("/sign-in")} variant="buttonPrimaryBlue" className="hidden md:flex font-sansBold uppercase">
+          {!logedIn && (
+            <Button
+              onClick={() => route.push("/sign-in")}
+              variant="buttonPrimaryBlue"
+              className={cn(`hidden font-sansBold uppercase`, pathname === "/selling-page" ? "hidden" : "md:flex")}
+            >
               <Person />
               Log in
             </Button>
-          ) : null}
+          )}
           <Button
             variant="buttonPrimaryBlueDestructive"
             className="flex rounded-full h-[45px] shadow-buttonShadow w-[45px] p-0 justify-center items-center hover:bg-transparent hover:border-2 hover:border-[rgba(114, 122, 237, 0.50)]"

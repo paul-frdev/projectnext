@@ -8,7 +8,7 @@ import { Person } from "@/icons/person";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
 interface MobileNavProps {
@@ -17,6 +17,7 @@ interface MobileNavProps {
 
 export const MobileNav: React.FC<MobileNavProps> = ({ isOpen }) => {
   const router = useRouter();
+  const pathname = usePathname();
   return (
     <motion.div
       variants={staggerMobileNav}
@@ -49,7 +50,10 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen }) => {
                 key={item.id}
                 className="flex flex-col justify-start items-start gap-y-4"
               >
-                <Button onClick={() => router.push("/sign-in")} className="flex justify-center gap-x-2 items-center md:hidden uppercase">
+                <Button
+                  onClick={() => router.push("/sign-in")}
+                  className={cn(`justify-center gap-x-2 items-center md:hidden uppercase`, pathname === "/selling-page" ? "hidden" : "flex")}
+                >
                   <Person />
                   Log in
                 </Button>
