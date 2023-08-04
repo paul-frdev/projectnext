@@ -228,10 +228,17 @@ export const ProfileResults = () => {
               </div>
             </div>
             <motion.div
-              initial="hidden"
-              whileInView="animate"
+              variants={{
+                initial: { x: 100, opacity: 0 },
+                animate: {
+                  x: 0,
+                  opacity: 1,
+                  transition: { type: "spring", duration: 3, stiffness: 100, damping: 10, delay: 0.3 },
+                }
+              }}
+              initial='initial'
+              animate='animate'
               viewport={{ once: false }}
-              variants={RightImageAnim}
               className="w-full flex justify-center items-center"
             >
               <Image src={computerImage} alt="computer" className="w-full max-w-[597px] h-auto md:object-cover md:bg-center" />

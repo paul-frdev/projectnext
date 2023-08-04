@@ -53,7 +53,7 @@ export const Navbar = () => {
             <Button
               onClick={() => route.push("/sign-in")}
               variant="buttonPrimaryBlue"
-              className={cn(`hidden font-sansBold uppercase`, pathname === "/selling-page" ? "hidden" : "md:flex")}
+              className={cn(`hidden font-sansBold uppercase`, pathname === "/selling-page" || pathname === "/discount-page" ? "hidden" : "md:flex")}
             >
               <Person />
               Log in

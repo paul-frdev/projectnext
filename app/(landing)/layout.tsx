@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function LandingLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <Navbar />
       {children}
       <Footer />
