@@ -1,3 +1,5 @@
+"use client";
+
 import { AnswersList } from "./answersList";
 import { Title } from "./ui/title";
 import { cn } from "@/lib/utils";
@@ -8,8 +10,7 @@ import React from "react";
 interface QuizCartProps {
   question: Question | null;
   currentQuestionIndex?: number;
-  answers: string[];
-  nextQuestion?: (data: string) => void;
+  nextQuestion?: (data: string, answerId: number) => void;
 }
 export const QuizCart: React.FC<QuizCartProps> = ({ question, nextQuestion, currentQuestionIndex }) => {
   return (

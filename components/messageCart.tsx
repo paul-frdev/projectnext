@@ -19,7 +19,6 @@ export const MessageCart: React.FC<MessageCartProps> = ({ message, currentQuesti
     toNextQuestion?.(currentQuestionIndex + 1);
   };
 
-  
   return (
     <motion.div
       initial="initial"

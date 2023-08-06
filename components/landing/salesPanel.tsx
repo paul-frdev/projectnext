@@ -15,8 +15,6 @@ export const SalesPanel = ({ className }: { className?: string }) => {
 
   useEffect(() => {
     const scrollBody = () => {
-      console.log("scroll");
-
       const windowHeight = window.innerHeight;
       setInnerHeight(windowHeight);
       if (window.scrollY > 80) {

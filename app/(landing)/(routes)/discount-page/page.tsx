@@ -1,10 +1,8 @@
-import { DiscountClient } from '@/components/discountClient'
-import React from 'react'
+import { DiscountClient } from "@/components/discountClient";
+import React from "react";
 
 const DiscountPage = () => {
-  return (
-    <DiscountClient />
-  )
-}
+  return <DiscountClient />;
+};
 
-export default DiscountPage
+export default DiscountPage;

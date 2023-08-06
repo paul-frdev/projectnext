@@ -24,3 +24,14 @@ export type ShowMessage = {
   subtitle?: string;
   spanText?: string;
 };
+
+export type Answer = {
+  id: string;
+  title: string;
+  text: string;
+};
+
+export type SelectedAnswer = {
+  questionTitle: string | undefined;
+  selectedAnswer: string | null;
+};

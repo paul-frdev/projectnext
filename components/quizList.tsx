@@ -1,27 +1,37 @@
 "use client";
 
 import { MessageList } from "./messageList";
+import { AlertModal } from "./modals/alertModal";
 import { QuizCart } from "./quizCart";
 import { QuizNav } from "./quizNav";
 import { mainQuestions } from "@/constants/questions";
+import useAnswerStore from "@/hooks/useAnswerStore";
 import { Question } from "@/types/quizQuestions";
+import { nanoid } from "nanoid/non-secure";
 import { useRouter } from "next/navigation";
 import React, { useCallback, useEffect, useState } from "react";
 
 export const QuizList = () => {
   const [currentQuestion, setCurrentQuestion] = useState<Question | any>(null);
+
+  const [title, setTitle] = useState("");
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState<string[]>([]);
+
   const [countPoints, setCountPoints] = useState(0);
   const [secondPoints, setSecondPoints] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
+  const { addAnswer, updateAnswer, answers, removeAnswers } = useAnswerStore();
   const router = useRouter();
 
+  const id = nanoid();
   const questionsData: Question[] = mainQuestions;
 
   const showQuestion = useCallback(
     (index: number) => {
       let curQuestion = questionsData[currentQuestionIndex];
+      setTitle(curQuestion.questionText!);
 
       if (currentQuestionIndex === 0) {
         setCurrentQuestion(curQuestion);
@@ -30,22 +40,30 @@ export const QuizList = () => {
       } else {
         curQuestion = questionsData[index];
         setCurrentQuestion(curQuestion);
+        setTitle(curQuestion.questionText!);
       }
 
       if (currentQuestionIndex === 20) {
         router.push("/checkout-results");
       }
     },
-    [currentQuestionIndex, questionsData, router]
+    [answers.length, currentQuestionIndex, questionsData, router]
   );
 
+  const onDelete = () => {
+    removeAnswers();
+    setIsOpen(false);
+  };
+
   const nextQuestion = useCallback(
-    (event: string) => {
-      setAnswers([...answers, event]);
+    (event: string, answerId: number) => {
+      addAnswer({ id: id, title: currentQuestion.questionText, text: event });
+      updateAnswer(title, event);
+
       setCurrentQuestionIndex(prev => prev + 1);
       showQuestion(currentQuestionIndex + 1);
     },
-    [answers, currentQuestionIndex, showQuestion]
+    [addAnswer, currentQuestionIndex, id, showQuestion]
   );
 
   const backShowNextQuestion = (index: number) => {
@@ -62,6 +80,7 @@ export const QuizList = () => {
     if (currentQuestionIndex >= 6 && currentQuestionIndex <= 20) {
       setSecondPoints(secondPoints - 7);
     }
+    setIsOpen(false);
   }, [currentQuestionIndex]);
 
   useEffect(() => {
@@ -76,27 +95,38 @@ export const QuizList = () => {
     showQuestion(currentQuestionIndex);
   }, [showQuestion, currentQuestionIndex]);
 
+  useEffect(() => {
+    if (countPoints === 0 && answers.length) {
+      setTimeout(() => {
+        setIsOpen(true);
+      }, 1000);
+    }
+  }, [countPoints]);
+
   return (
-    <div className="w-full flex flex-col justify-center items-center gap-y-9">
-      {mainQuestions.length > currentQuestionIndex ? (
-        <QuizNav
-          prevQuestion={prevQuestion}
-          disabled={currentQuestionIndex === 0}
-          countPoints={countPoints}
-          secondPoints={secondPoints}
-          index={currentQuestionIndex}
-        />
-      ) : null}
-      {currentQuestion?.showMessageCart ? (
-        <MessageList
-          currentQuestionId={currentQuestion?.id}
-          currentQuestion={currentQuestion}
-          toNextQuestion={backShowNextQuestion}
-          currentQuestionIndex={currentQuestionIndex}
-        />
-      ) : mainQuestions.length > currentQuestionIndex ? (
-        <QuizCart currentQuestionIndex={currentQuestionIndex} question={currentQuestion} answers={answers} nextQuestion={nextQuestion} />
-      ) : null}
-    </div>
+    <>
+      <AlertModal isOpen={isOpen} onClose={() => setIsOpen(false)} onConfirm={onDelete} />
+      <div className="w-full flex flex-col justify-center items-center gap-y-9">
+        {mainQuestions.length > currentQuestionIndex ? (
+          <QuizNav
+            prevQuestion={prevQuestion}
+            disabled={currentQuestionIndex === 0}
+            countPoints={countPoints}
+            secondPoints={secondPoints}
+            index={currentQuestionIndex}
+          />
+        ) : null}
+        {currentQuestion?.showMessageCart ? (
+          <MessageList
+            currentQuestionId={currentQuestion?.id}
+            currentQuestion={currentQuestion}
+            toNextQuestion={backShowNextQuestion}
+            currentQuestionIndex={currentQuestionIndex}
+          />
+        ) : mainQuestions.length > currentQuestionIndex ? (
+          <QuizCart currentQuestionIndex={currentQuestionIndex} question={currentQuestion} nextQuestion={nextQuestion} />
+        ) : null}
+      </div>
+    </>
   );
 };

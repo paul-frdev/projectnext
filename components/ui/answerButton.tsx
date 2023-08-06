@@ -1,15 +1,23 @@
+"use client";
+
 import { Button } from "./button";
+import useAnswerStore from "@/hooks/useAnswerStore";
 import { cn } from "@/lib/utils";
 import React from "react";
 
 interface QuestionButtonProps {
   answer: string;
-  nextQuestion?: (data: string) => void;
+  id: number;
+  nextQuestion?: (data: string, answerId: number) => void;
 }
-export const AnswerButton: React.FC<QuestionButtonProps> = ({ answer, nextQuestion }) => {
+export const AnswerButton: React.FC<QuestionButtonProps> = ({ answer, id, nextQuestion }) => {
+  const { answers } = useAnswerStore();
+
+  const answerTitle = answers.find(item => item.text === answer);
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const eventTarget = event.target as HTMLDivElement;
-    nextQuestion?.(eventTarget.innerText);
+    nextQuestion?.(eventTarget.innerText, id);
   };
 
   const firstLetterToUpperCase = (str: string) => {
@@ -21,7 +29,10 @@ export const AnswerButton: React.FC<QuestionButtonProps> = ({ answer, nextQuesti
       <Button
         onClick={handleClick}
         variant={"buttonPrimaryBlueDestructive"}
-        className={cn(`justify-start w-full h-[48px] text-left rounded-lg text-[16px] tracking-[0.32px] leading-[24px] px-6`)}
+        className={cn(
+          `justify-start w-full h-[48px] text-left rounded-lg text-[16px] tracking-[0.32px] leading-[24px] px-6`,
+          answerTitle ? "bg-[#727AED] text-white opacity-80 pointer-events-none" : "bg-transparent"
+        )}
       >
         {firstLetterToUpperCase(answer)}
       </Button>

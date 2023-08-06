@@ -1,8 +1,6 @@
-
 "use client";
 
 import { Loader } from "@/components/ui/loader";
-
 
 const Loading = () => {
   return (
@@ -10,6 +8,6 @@ const Loading = () => {
       <Loader />
     </div>
   );
-}
+};
 
 export default Loading;

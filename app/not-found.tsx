@@ -1,10 +1,8 @@
-import { NotFoundClient } from '@/components/notFoundClient'
-import React from 'react'
+import { NotFoundClient } from "@/components/notFoundClient";
+import React from "react";
 
 const NotFount = () => {
-  return (
-    <NotFoundClient />
-  )
-}
+  return <NotFoundClient />;
+};
 
 export default NotFount;

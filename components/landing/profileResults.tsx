@@ -234,10 +234,10 @@ export const ProfileResults = () => {
                   x: 0,
                   opacity: 1,
                   transition: { type: "spring", duration: 3, stiffness: 100, damping: 10, delay: 0.3 },
-                }
+                },
               }}
-              initial='initial'
-              animate='animate'
+              initial="initial"
+              animate="animate"
               viewport={{ once: false }}
               className="w-full flex justify-center items-center"
             >
