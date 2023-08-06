@@ -31,7 +31,7 @@ export const QuizList = () => {
   const showQuestion = useCallback(
     (index: number) => {
       let curQuestion = questionsData[currentQuestionIndex];
-      setTitle(curQuestion.questionText!);
+      setTitle(curQuestion?.questionText!);
 
       if (currentQuestionIndex === 0) {
         setCurrentQuestion(curQuestion);
@@ -40,7 +40,7 @@ export const QuizList = () => {
       } else {
         curQuestion = questionsData[index];
         setCurrentQuestion(curQuestion);
-        setTitle(curQuestion.questionText!);
+        setTitle(curQuestion?.questionText!);
       }
 
       if (currentQuestionIndex === 20) {
