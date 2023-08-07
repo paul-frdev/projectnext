@@ -13,12 +13,12 @@ export const GetAcademy = () => {
       initial="initial"
       whileInView={"animate"}
       viewport={{ once: false, amount: 0.2 }}
-      className="flex flex-col justify-center items-center overflow-hidden mb-16 md:mb-28"
+      className="flex flex-col justify-center items-center mb-16 md:mb-28 overflow-y-hidden"
     >
       <Title variants={fadeIn} className="text-[30px] md:text-[36px] tracking-[0.25px] mb-8 md:mb-14">
         What you get Academy
       </Title>
-      <div className="flex flex-col justify-center lg:justify-between items-center lg:items-start lg:grid lg:grid-cols-2 lg:gap-x-6 w-full">
+      <div className="flex flex-col justify-center lg:justify-between items-center lg:items-start lg:grid lg:grid-cols-2 lg:h-[500px] lg:gap-x-6 w-full">
         <SalesCart
           variants={fadeInRight}
           className=" bg-bgBlue max-w-[328px] md:max-w-[588px] md:max-h-[454px] md:h-full md:row-start-1 md:row-end-3 w-full flex flex-col justify-center items-center gap-y-6 relative mb-24 lg:mb-0 lg:my-auto md:rounded-[48px] md:justify-start md:items-start"

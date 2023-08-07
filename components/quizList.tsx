@@ -47,7 +47,7 @@ export const QuizList = () => {
         router.push("/checkout-results");
       }
     },
-    [answers.length, currentQuestionIndex, questionsData, router]
+    [currentQuestionIndex, questionsData, router]
   );
 
   const onDelete = () => {
@@ -63,7 +63,7 @@ export const QuizList = () => {
       setCurrentQuestionIndex(prev => prev + 1);
       showQuestion(currentQuestionIndex + 1);
     },
-    [addAnswer, currentQuestionIndex, id, showQuestion]
+    [addAnswer, currentQuestion?.questionText, currentQuestionIndex, id, showQuestion, title, updateAnswer]
   );
 
   const backShowNextQuestion = (index: number) => {
@@ -96,12 +96,12 @@ export const QuizList = () => {
   }, [showQuestion, currentQuestionIndex]);
 
   useEffect(() => {
-    if (countPoints === 0 && answers.length) {
+    if (title === 'I’m...' && answers.length) {
       setTimeout(() => {
         setIsOpen(true);
       }, 1000);
     }
-  }, [countPoints]);
+  }, [title]);
 
   return (
     <>

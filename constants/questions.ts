@@ -99,7 +99,7 @@ export const mainQuestions = [
     id: 11,
     questionText: "I don’t earn more because of...",
     answerOptions: [
-      { id: 1, answerText: "Fear" },
+      { id: 1, answerText: "Fears" },
       { id: 2, answerText: "Lack of knowledge" },
       { id: 3, answerText: "Lack of discipline" },
       { id: 4, answerText: "Lack of time and focus" },

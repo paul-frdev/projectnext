@@ -25,7 +25,7 @@ export const AlertModal: React.FC<AlertModalProps> = ({ onClose, onConfirm, isOp
   };
 
   const description = () => {
-    return <Typography className="text-[18px] font-sansMedium">Is seems you are proceeded the quiz</Typography>;
+    return <Typography className="text-[18px] font-sansMedium">It seems you are started the quiz</Typography>;
   };
 
   return (
