@@ -22,7 +22,7 @@ export const staggerBlockContainer = {
   initial: {},
   animate: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.3,
       delayChildren: 0.3,
     },
   },
@@ -121,7 +121,7 @@ export const fadeInDown = {
   },
 };
 
-export const RightImageAnim = {
+export const rightImageAnim = {
   hidden: { x: 100, opacity: 0 },
   animate: {
     x: 0,

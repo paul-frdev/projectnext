@@ -96,7 +96,7 @@ export const QuizList = () => {
   }, [showQuestion, currentQuestionIndex]);
 
   useEffect(() => {
-    if (title === 'I’m...' && answers.length) {
+    if (title === "I’m..." && answers.length) {
       setTimeout(() => {
         setIsOpen(true);
       }, 1000);

@@ -7,19 +7,7 @@ import { Typography } from "../ui/typography";
 import { SalesCart } from "./salesCart";
 import { SalesWidget } from "./salesWidget";
 import computerImage from "/public/images/computer.png";
-import {
-  RightImageAnim,
-  countVariants,
-  fadeIn,
-  fadeInCart,
-  fadeInDown,
-  fadeInLeft,
-  fadeInRight,
-  fadeInUp,
-  staggerBlockContainer,
-  staggerContainer,
-  staggerTextContainer,
-} from "@/constants/variants";
+import { fadeIn, fadeInCart, fadeInLeft, fadeInRight, fadeInUp, rightImageAnim, staggerBlockContainer } from "@/constants/variants";
 import { Bank } from "@/icons/bank";
 import { Dollar } from "@/icons/dollar";
 import { Growth } from "@/icons/growth";
@@ -40,7 +28,7 @@ export const ProfileResults = () => {
 
   return (
     <section className="w-full overflow-hidden  mb-16">
-      <motion.div variants={staggerContainer} initial="initial" whileInView={"animate"} viewport={{ once: false, amount: 0.2 }}>
+      <motion.div initial="initial" whileInView={"animate"} viewport={{ once: false, amount: 0.3 }} variants={staggerBlockContainer}>
         <Title variants={fadeIn} className="text-3xl md:text-4xl md:text-left tracking-[0.25px] text-basic text-center mb-6">
           Your profile summary:
         </Title>
@@ -133,13 +121,7 @@ export const ProfileResults = () => {
             </motion.div>
           </SalesCart>
         </div>
-        <motion.div
-          initial="initial"
-          whileInView={"animate"}
-          viewport={{ once: false, amount: 0.2 }}
-          variants={staggerTextContainer}
-          className="full"
-        >
+        <div className="full">
           <SalesCart
             variants={{
               initial: {
@@ -174,14 +156,8 @@ export const ProfileResults = () => {
               </motion.p>
             </div>
           </SalesCart>
-        </motion.div>
-        <motion.div
-          initial="initial"
-          whileInView={"animate"}
-          viewport={{ once: false, amount: 0.2 }}
-          variants={staggerTextContainer}
-          className="w-full"
-        >
+        </div>
+        <div className="w-full">
           <SalesCart
             variants={fadeInUp}
             className="max-w-[384px] md:max-w-[1200px] flex flex-col md:flex-row items-start md:items-center m-auto gap-y-6 md:gap-x-6  bg-bgOrange"
@@ -227,24 +203,11 @@ export const ProfileResults = () => {
                 </SalesCart>
               </div>
             </div>
-            <motion.div
-              variants={{
-                initial: { x: 100, opacity: 0 },
-                animate: {
-                  x: 0,
-                  opacity: 1,
-                  transition: { type: "spring", duration: 3, stiffness: 100, damping: 10, delay: 0.3 },
-                },
-              }}
-              initial="initial"
-              animate="animate"
-              viewport={{ once: false }}
-              className="w-full flex justify-center items-center"
-            >
+            <motion.div variants={rightImageAnim} className="w-full flex justify-center items-center">
               <Image src={computerImage} alt="computer" className="w-full max-w-[597px] h-auto md:object-cover md:bg-center" />
             </motion.div>
           </SalesCart>
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );

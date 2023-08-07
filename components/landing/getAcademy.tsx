@@ -2,7 +2,7 @@
 
 import { Title } from "../ui/title";
 import { SalesCart } from "./salesCart";
-import { LeftImageAnim, RightImageAnim, fadeIn, fadeInLeft, fadeInRight, fadeInUp, staggerContainer } from "@/constants/variants";
+import { LeftImageAnim, fadeIn, fadeInLeft, fadeInRight, fadeInUp, rightImageAnim, staggerContainer } from "@/constants/variants";
 import { motion } from "framer-motion";
 import React from "react";
 
@@ -61,7 +61,7 @@ export const GetAcademy = () => {
               initial="hidden"
               whileInView="animate"
               viewport={{ once: false }}
-              variants={RightImageAnim}
+              variants={rightImageAnim}
               className="absolute -top-[13px] md:-top-[36px] right-0 text-[212.178px] font-sansBold tracking-[1.473px] leading-none text-extraLight"
             >
               2
@@ -83,7 +83,7 @@ export const GetAcademy = () => {
               initial="hidden"
               whileInView="animate"
               viewport={{ once: false }}
-              variants={RightImageAnim}
+              variants={rightImageAnim}
               className="absolute -top-[31px] right-0 text-[212.178px] font-sansBold tracking-[1.473px] leading-none text-extraLight"
             >
               3

@@ -7,7 +7,7 @@ import { Typography } from "../ui/typography";
 import { SalesCart } from "./salesCart";
 import { SalesWidget } from "./salesWidget";
 import guarenteeImage from "/public/images/guarentee.png";
-import { LeftImageAnim, RightImageAnim, fadeInLeft, fadeInRight, fadeInUp, staggerTextContainer } from "@/constants/variants";
+import { LeftImageAnim, fadeInLeft, fadeInRight, fadeInUp, rightImageAnim, staggerTextContainer } from "@/constants/variants";
 import { useTimer } from "@/hooks/useTimer";
 import { LockOrange } from "@/icons/lockOrange";
 import { motion } from "framer-motion";
@@ -32,7 +32,7 @@ export const DiscountCart = () => {
           initial="hidden"
           whileInView="animate"
           viewport={{ once: false }}
-          variants={RightImageAnim}
+          variants={rightImageAnim}
           className="absolute z-10 top-0 overflow-hidden md:-top-[4px] right-[7px] md:right-[65px] bg-rightCoins md:bg-rightCoinsBig w-[132px] md:w-[149px] h-[178px] md:h-[303px] bg-no-repeat object-center object-cover"
         />
         <div className="flex flex-col md:flex-row justify-start md:justify-center items-start gap-y-6 w-full max-w-[264px] md:max-w-[570px]">

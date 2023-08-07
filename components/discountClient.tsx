@@ -3,7 +3,7 @@
 import { DiscountCart } from "./landing/discountCart";
 import { Title } from "./ui/title";
 import saleImage from "/public/images/sale.png";
-import { RightImageAnim, fadeInRight, staggerBlockContainer } from "@/constants/variants";
+import { fadeInRight, staggerBlockContainer } from "@/constants/variants";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";

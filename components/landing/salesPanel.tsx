@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "../ui/button";
-import { fadeIn } from "@/constants/variants";
+import { fadeIn, fadeInDown } from "@/constants/variants";
 import { useTimer } from "@/hooks/useTimer";
 import { Timer } from "@/icons/timer";
 import { cn } from "@/lib/utils";
@@ -34,6 +34,17 @@ export const SalesPanel = ({ className }: { className?: string }) => {
 
   return (
     <motion.div
+      variants={{
+        initial: {
+          y: -90,
+          opacity: 0,
+        },
+        animate: {
+          y: 0,
+          opacity: 1,
+          transition: { type: "spring", duration: 2.1, delay: 0.5 },
+        },
+      }}
       className={cn(
         `flex justify-between items-center w-full max-w-[384px] rounded-3xl gap-x-2 bg-bgBlue p-2`,
         className,

@@ -5,6 +5,7 @@ import { ProfileResults } from "./landing/profileResults";
 import { Testimonials } from "./landing/testimonials";
 import { TryAcademy } from "./landing/tryAcademy";
 import { Container } from "./ui/container";
+import { staggerBlockContainer } from "@/constants/variants";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef } from "react";
 
@@ -16,7 +17,7 @@ export const SellingClient = () => {
     const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
     if (scrollY >= totalHeight) {
       setTimeout(() => {
-        router.push("/discount-page");
+        router.push("/selling-page/discount");
       }, 2000);
     }
   };
